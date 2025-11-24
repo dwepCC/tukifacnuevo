@@ -49,27 +49,27 @@
                 </div>
                 <div class="col-12 container-btns text-center">
                     <br><br>
-                    <a :href="`https://docs.google.com/viewer?url=${form.print_a4}?format=pdf`" class="btn mx-3 btn-primary btn-lg" target="_BLANK">
+                    <a :href="`https://docs.google.com/viewer?url=${form.print_a4}?format=pdf`" class="btn mx-3 btn-primary btn-md" target="_BLANK">
                         <i class="far fa-file-pdf"></i>
                         <br>
                         <span>PDF A4</span>
                     </a>
-                    <a :href="`https://docs.google.com/viewer?url=${form.print_a5}?format=pdf`" class="btn btn-primary mx-3 btn-lg" target="_BLANK">
+                    <a :href="`https://docs.google.com/viewer?url=${form.print_a5}?format=pdf`" class="btn btn-primary mx-3 btn-md" target="_BLANK">
                         <i class="far fa-file-pdf"></i>
                         <br>
                         <span>PDF A5</span>
                     </a>
-                    <a :href="`https://docs.google.com/viewer?url=${form.print_ticket_58}?format=pdf`" class="btn mx-3 btn-primary btn-lg" target="_BLANK">
+                    <a :href="`https://docs.google.com/viewer?url=${form.print_ticket_58}?format=pdf`" class="btn mx-3 btn-primary btn-md" target="_BLANK">
                         <i class="far fa-file-pdf"></i>
                         <br>
                         <span>PDF TICKET 58mm</span>
                     </a>
-                    <a :href="`https://docs.google.com/viewer?url=${form.print_ticket_50}?format=pdf`" class="btn mx-3 btn-primary btn-lg" target="_BLANK">
+                    <a :href="`https://docs.google.com/viewer?url=${form.print_ticket_50}?format=pdf`" class="btn mx-3 btn-primary btn-md" target="_BLANK">
                         <i class="far fa-file-pdf"></i>
                         <br>
                         <span>PDF TICKET 50mm</span>
                     </a>
-                    <a :href="`https://docs.google.com/viewer?url=${form.print_ticket}?format=pdf`" class="btn mx-3 btn-primary btn-lg" target="_BLANK">
+                    <a :href="`https://docs.google.com/viewer?url=${form.print_ticket}?format=pdf`" class="btn mx-3 btn-primary btn-md" target="_BLANK">
                         <i class="far fa-file-pdf"></i>
                         <br>
                         <span>PDF TICKET</span>

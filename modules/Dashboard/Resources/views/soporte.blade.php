@@ -143,9 +143,9 @@
                         title: "Venta rápida", /* listo */
                         url: "https://www.youtube.com/watch?v=Hv7hgHGgO8s",
                         thumbnail: "https://img.youtube.com/vi/Hv7hgHGgO8s/mqdefault.jpg",
-                        duration: "2:00",
+                        duration: "2:02",
                         views: 1680,
-                        publishedDate: "2023-10-14"
+                        publishedDate: "2025-10-14"
                     },
                     { 
                         id: 11, 
@@ -211,11 +211,11 @@
                     { 
                         id: 17, 
                         title: "Importar lista de precios", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "9:45",
+                        url: "https://www.youtube.com/watch?v=iDoKxWUobxo",
+                        thumbnail: "https://img.youtube.com/vi/iDoKxWUobxo/mqdefault.jpg",
+                        duration: "01:21",
                         views: 1650,
-                        publishedDate: "2023-03-05"
+                        publishedDate: "2025-11-14"
                     },
                     { 
                         id: 18, 
@@ -272,11 +272,11 @@
                     { 
                         id: 23, 
                         title: "Nueva compra", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "10:30",
+                        url: "https://www.youtube.com/watch?v=aFMs4CRyxV8",
+                        thumbnail: "https://img.youtube.com/vi/aFMs4CRyxV8/mqdefault.jpg",
+                        duration: "02:12",
                         views: 1780,
-                        publishedDate: "2023-05-08"
+                        publishedDate: "2025-11-15"
                     },
                     { 
                         id: 24, 
@@ -360,14 +360,23 @@
                     { 
                         id: 32, 
                         title: "Movimientos", 
-                        url: "https://www.youtube.com/watch?v=CbVnyTz_4AU",
-                        thumbnail: "https://img.youtube.com/vi/CbVnyTz_4AU/mqdefault.jpg",
-                        duration: "02:53",
+                        url: "https://www.youtube.com/watch?v=V2QhSzD5mOE",
+                        thumbnail: "https://img.youtube.com/vi/V2QhSzD5mOE/mqdefault.jpg",
+                        duration: "00:56",
                         views: 1580,
-                        publishedDate: "2025-10-04"
+                        publishedDate: "2025-11-16"
                     },
                     { 
                         id: 33, 
+                        title: "Traslados", 
+                        url: "https://www.youtube.com/watch?v=zRC0R-2XlYM",
+                        thumbnail: "https://img.youtube.com/vi/zRC0R-2XlYM/mqdefault.jpg",
+                        duration: "00:51",
+                        views: 1580,
+                        publishedDate: "2025-11-15"
+                    },
+                    { 
+                        id: 34, 
                         title: "Reporte Kardex", 
                         url: "https://www.youtube.com/watch?v=6JcP-xx0GrI",
                         thumbnail: "https://img.youtube.com/vi/6JcP-xx0GrI/mqdefault.jpg",
@@ -376,7 +385,7 @@
                         publishedDate: "2025-10-04"
                     },
                     { 
-                        id: 34, 
+                        id: 35, 
                         title: "Devolución a proveedor", 
                         url: "https://www.youtube.com/watch?v=TyzlQLtwqys",
                         thumbnail: "https://img.youtube.com/vi/TyzlQLtwqys/mqdefault.jpg",
@@ -385,7 +394,7 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 35, 
+                        id: 36, 
                         title: "Reporte de inventario", 
                         url: "https://www.youtube.com/watch?v=NOMKuLEAWWA",
                         thumbnail: "https://img.youtube.com/vi/NOMKuLEAWWA/mqdefault.jpg",
@@ -394,7 +403,7 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 36, 
+                        id: 37, 
                         title: "Reporte de Kardex valorizado", 
                         url: "https://www.youtube.com/watch?v=syq6sTZtYpA",
                         thumbnail: "https://img.youtube.com/vi/syq6sTZtYpA/mqdefault.jpg",
@@ -410,7 +419,7 @@
                 icon: "fas fa-users",
                 videos: [
                     { 
-                        id: 37, 
+                        id: 38, 
                         title: "Creación individual", 
                         url: "https://www.youtube.com/watch?v=pUztdgxX870",
                         thumbnail: "https://img.youtube.com/vi/pUztdgxX870/mqdefault.jpg",
@@ -419,7 +428,7 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 38, 
+                        id: 39, 
                         title: "Importación masiva", 
                         url: "https://www.youtube.com/watch?v=mme5tyPm2qg",
                         thumbnail: "https://img.youtube.com/vi/mme5tyPm2qg/mqdefault.jpg",
@@ -428,16 +437,16 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 39, 
-                        title: "Clientes exporta", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "7:30",
+                        id: 40, 
+                        title: "Exportar clientes", 
+                        url: "https://www.youtube.com/watch?v=oOJQRtEEKN8",
+                        thumbnail: "https://img.youtube.com/vi/oOJQRtEEKN8/mqdefault.jpg",
+                        duration: "01:20",
                         views: 1230,
-                        publishedDate: "2025-11-06"
+                        publishedDate: "2025-11-17"
                     },
                     { 
-                        id: 40, 
+                        id: 41, 
                         title: "Tipos de clientes", 
                         url: "https://www.youtube.com/watch?v=7CZnaXF9_IA",
                         thumbnail: "https://img.youtube.com/vi/7CZnaXF9_IA/mqdefault.jpg",
@@ -446,7 +455,7 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 41, 
+                        id: 42, 
                         title: "Agentes", 
                         url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
                         thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
@@ -455,13 +464,13 @@
                         publishedDate: "2023-03-25"
                     },
                     { 
-                        id: 42, 
+                        id: 43, 
                         title: "Cómo elegir un cliente por defecto", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "5:15",
+                        url: "https://www.youtube.com/watch?v=w-mUxJBxrgk",
+                        thumbnail: "https://img.youtube.com/vi/w-mUxJBxrgk/mqdefault.jpg",
+                        duration: "0:46",
                         views: 890,
-                        publishedDate: "2023-03-15"
+                        publishedDate: "2025-11-14"
                     }
                 ]
             },
@@ -471,7 +480,7 @@
                 icon: "fas fa-truck",
                 videos: [
                     { 
-                        id: 43, 
+                        id: 44, 
                         title: "Generar guía de remisión", 
                         url: "https://www.youtube.com/watch?v=OVAAUQYN7tg",
                         thumbnail: "https://img.youtube.com/vi/OVAAUQYN7tg/mqdefault.jpg",
@@ -480,40 +489,40 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 44, 
-                        title: "Generar guía de transportista", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "9:45",
-                        views: 1520,
-                        publishedDate: "2023-04-22"
-                    },
-                    { 
                         id: 45, 
-                        title: "Creación de transportistas", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "7:20",
-                        views: 1320,
-                        publishedDate: "2023-04-12"
+                        title: "Generar guía de transportista", 
+                        url: "https://www.youtube.com/watch?v=5ZujrmhU2k4",
+                        thumbnail: "https://img.youtube.com/vi/5ZujrmhU2k4/mqdefault.jpg",
+                        duration: "01:58",
+                        views: 1520,
+                        publishedDate: "2025-11-22"
                     },
                     { 
                         id: 46, 
-                        title: "Creación de conductores", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "6:15",
-                        views: 1120,
-                        publishedDate: "2023-04-02"
+                        title: "Creación de transportistas", 
+                        url: "https://www.youtube.com/watch?v=jm3mCHSAS0Q",
+                        thumbnail: "https://img.youtube.com/vi/jm3mCHSAS0Q/mqdefault.jpg",
+                        duration: "01:14",
+                        views: 1320,
+                        publishedDate: "2025-11-19"
                     },
                     { 
                         id: 47, 
+                        title: "Creación de conductores", 
+                        url: "https://www.youtube.com/watch?v=6hhcXi7R-E4",
+                        thumbnail: "https://img.youtube.com/vi/6hhcXi7R-E4/mqdefault.jpg",
+                        duration: "6:15",
+                        views: 1120,
+                        publishedDate: "2025-11-22"
+                    },
+                    { 
+                        id: 48, 
                         title: "Creación de vehículos", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "8:30",
+                        url: "https://www.youtube.com/watch?v=JxssD09xyNU",
+                        thumbnail: "https://img.youtube.com/vi/JxssD09xyNU/mqdefault.jpg",
+                        duration: "01:14",
                         views: 1250,
-                        publishedDate: "2023-03-22"
+                        publishedDate: "2025-11-14"
                     }
                 ]
             },
@@ -523,34 +532,34 @@
                 icon: "fas fa-chart-bar",
                 videos: [
                     { 
-                        id: 48, 
-                        title: "Reporte general", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "10:15",
-                        views: 1920,
-                        publishedDate: "2023-05-04"
-                    },
-                    { 
                         id: 49, 
-                        title: "Reporte ventas", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "12:30",
-                        views: 1680,
-                        publishedDate: "2023-04-24"
+                        title: "Reporte general", 
+                        url: "https://www.youtube.com/watch?v=wOl8fA2d1kY",
+                        thumbnail: "https://img.youtube.com/vi/wOl8fA2d1kY/mqdefault.jpg",
+                        duration: "02:50",
+                        views: 1920,
+                        publishedDate: "2025-11-11"
                     },
                     { 
                         id: 50, 
-                        title: "Reporte compras", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "9:45",
-                        views: 1420,
-                        publishedDate: "2023-04-14"
+                        title: "Reporte ventas", 
+                        url: "https://www.youtube.com/watch?v=U46LbbicAb0",
+                        thumbnail: "https://img.youtube.com/vi/U46LbbicAb0/mqdefault.jpg",
+                        duration: "02:00",
+                        views: 1680,
+                        publishedDate: "2025-11-14"
                     },
                     { 
                         id: 51, 
+                        title: "Reporte compras", 
+                        url: "https://www.youtube.com/watch?v=6Qes7-K886s",
+                        thumbnail: "https://img.youtube.com/vi/6Qes7-K886s/mqdefault.jpg",
+                        duration: "02:57",
+                        views: 1420,
+                        publishedDate: "2025-11-14"
+                    },
+                    { 
+                        id: 52, 
                         title: "Ventas y comisiones", 
                         url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
                         thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
@@ -559,22 +568,31 @@
                         publishedDate: "2023-04-04"
                     },
                     { 
-                        id: 52, 
+                        id: 53, 
                         title: "Pedidos", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "8:15",
+                        url: "https://www.youtube.com/watch?v=kOieUhES2Z4",
+                        thumbnail: "https://img.youtube.com/vi/kOieUhES2Z4/mqdefault.jpg",
+                        duration: "00:52",
                         views: 1320,
-                        publishedDate: "2023-03-24"
+                        publishedDate: "2025-11-22"
                     },
                     { 
-                        id: 53, 
+                        id: 54, 
                         title: "Guías", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "7:30",
+                        url: "https://www.youtube.com/watch?v=Tp0QWyrnomA",
+                        thumbnail: "https://img.youtube.com/vi/Tp0QWyrnomA/mqdefault.jpg",
+                        duration: "01:03",
                         views: 1180,
-                        publishedDate: "2023-03-14"
+                        publishedDate: "2025-1-14"
+                    },
+                    { 
+                        id: 55, 
+                        title: "Utilidad Detallada", 
+                        url: "https://www.youtube.com/watch?v=Lkc5_Xg_FJA",
+                        thumbnail: "https://img.youtube.com/vi/Lkc5_Xg_FJA/mqdefault.jpg",
+                        duration: "01:20",
+                        views: 1180,
+                        publishedDate: "2025-11-14"
                     }
                 ]
             },
@@ -584,7 +602,7 @@
                 icon: "fas fa-coins",
                 videos: [
                     { 
-                        id: 54, 
+                        id: 56, 
                         title: "Abrir una caja y exportar reportes", 
                         url: "https://www.youtube.com/watch?v=ga_7ROkdd4o",
                         thumbnail: "https://img.youtube.com/vi/ga_7ROkdd4o/mqdefault.jpg",
@@ -593,7 +611,7 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 55, 
+                        id: 57, 
                         title: "Movimientos", 
                         url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
                         thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
@@ -602,7 +620,7 @@
                         publishedDate: "2023-04-21"
                     },
                     { 
-                        id: 56, 
+                        id: 58, 
                         title: "Transacciones", 
                         url: "https://www.youtube.com/watch?v=uGBJ3EgcBhw",
                         thumbnail: "https://img.youtube.com/vi/uGBJ3EgcBhw/mqdefault.jpg",
@@ -611,16 +629,16 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 57, 
+                        id: 59, 
                         title: "Ingresos", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "8:15",
+                        url: "https://www.youtube.com/watch?v=SQjk7J8oZKs",
+                        thumbnail: "https://img.youtube.com/vi/SQjk7J8oZKs/mqdefault.jpg",
+                        duration: "01:10",
                         views: 1280,
-                        publishedDate: "2023-04-01"
+                        publishedDate: "2025-11-16"
                     },
                     { 
-                        id: 58, 
+                        id: 60, 
                         title: "Cuentas por cobrar", 
                         url: "https://www.youtube.com/watch?v=0FXL_oEV0ZM",
                         thumbnail: "https://img.youtube.com/vi/0FXL_oEV0ZM/mqdefault.jpg",
@@ -629,16 +647,16 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 59, 
+                        id: 61, 
                         title: "Cuentas por pagar", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "9:30",
+                        url: "https://www.youtube.com/watch?v=z4AhNOhkj9I",
+                        thumbnail: "https://img.youtube.com/vi/z4AhNOhkj9I/mqdefault.jpg",
+                        duration: "01:24",
                         views: 1450,
-                        publishedDate: "2023-03-11"
+                        publishedDate: "2025-11-17"
                     },
                     { 
-                        id: 60, 
+                        id: 62, 
                         title: "Pagos", 
                         url: "https://www.youtube.com/watch?v=tEhnNvY_YKc",
                         thumbnail: "https://img.youtube.com/vi/tEhnNvY_YKc/mqdefault.jpg",
@@ -647,13 +665,13 @@
                         publishedDate: "2025-11-06"
                     },
                     { 
-                        id: 61, 
+                        id: 63, 
                         title: "Balance", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "12:30",
+                        url: "https://www.youtube.com/watch?v=OvVNJ9u50zk",
+                        thumbnail: "https://img.youtube.com/vi/OvVNJ9u50zk/mqdefault.jpg",
+                        duration: "00:54",
                         views: 1780,
-                        publishedDate: "2023-02-20"
+                        publishedDate: "2025-11-19"
                     }
                 ]
             },
@@ -663,40 +681,58 @@
                 icon: "fas fa-file-invoice",
                 videos: [
                     { 
-                        id: 62, 
-                        title: "Documentos con retención", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "13:15",
-                        views: 1920,
-                        publishedDate: "2023-04-30"
-                    },
-                    { 
-                        id: 63, 
-                        title: "Documentos de percepción", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "11:30",
-                        views: 1650,
-                        publishedDate: "2023-04-20"
-                    },
-                    { 
                         id: 64, 
-                        title: "Liquidaciones de compra", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "9:45",
-                        views: 1420,
-                        publishedDate: "2023-04-10"
+                        title: "Envío por resumen", 
+                        url: "https://www.youtube.com/watch?v=CJByTUP9JJg",
+                        thumbnail: "https://img.youtube.com/vi/CJByTUP9JJg/mqdefault.jpg",
+                        duration: "01:32",
+                        views: 1920,
+                        publishedDate: "2025-11-22"
                     },
                     { 
                         id: 65, 
+                        title: "Validación de comprobantes", 
+                        url: "https://www.youtube.com/watch?v=pDuI17yJ4HE",
+                        thumbnail: "https://img.youtube.com/vi/pDuI17yJ4HE/mqdefault.jpg",
+                        duration: "01:14",
+                        views: 1920,
+                        publishedDate: "2025-11-22"
+                    },
+                    { 
+                        id: 66, 
+                        title: "Documentos con retención", 
+                        url: "https://www.youtube.com/watch?v=hzFQ4QViWNY",
+                        thumbnail: "https://img.youtube.com/vi/hzFQ4QViWNY/mqdefault.jpg",
+                        duration: "01:37",
+                        views: 1920,
+                        publishedDate: "2025-11-19"
+                    },
+                    { 
+                        id: 67, 
+                        title: "Documentos de percepción", 
+                        url: "https://www.youtube.com/watch?v=03Gqn_yvjqg",
+                        thumbnail: "https://img.youtube.com/vi/03Gqn_yvjqg/mqdefault.jpg",
+                        duration: "01:20",
+                        views: 1650,
+                        publishedDate: "2025-11-22"
+                    },
+                    { 
+                        id: 68, 
+                        title: "Liquidaciones de compra", 
+                        url: "https://www.youtube.com/watch?v=d0yod1l8JD0",
+                        thumbnail: "https://img.youtube.com/vi/d0yod1l8JD0/mqdefault.jpg",
+                        duration: "01:13",
+                        views: 1420,
+                        publishedDate: "2025-11-24"
+                    },
+                    { 
+                        id: 69, 
                         title: "Comprobantes de contingencia", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "8:20",
+                        url: "https://www.youtube.com/watch?v=T4T54Pye5LQ",
+                        thumbnail: "https://img.youtube.com/vi/T4T54Pye5LQ/mqdefault.jpg",
+                        duration: "02:42",
                         views: 1280,
-                        publishedDate: "2023-03-30"
+                        publishedDate: "2025-11-24"
                     }
                 ]
             },
@@ -706,34 +742,34 @@
                 icon: "fas fa-calculator",
                 videos: [
                     { 
-                        id: 66, 
+                        id: 70, 
                         title: "Exportar reporte", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "10:30",
+                        url: "https://www.youtube.com/watch?v=L2x7-6goLEc",
+                        thumbnail: "https://img.youtube.com/vi/L2x7-6goLEc/mqdefault.jpg",
+                        duration: "01:07",
                         views: 1780,
-                        publishedDate: "2023-04-28"
+                        publishedDate: "2025-11-14"
                     },
                     { 
-                        id: 67, 
+                        id: 71, 
                         title: "Exportar formatos - sist. contable", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "12:15",
+                        url: "https://www.youtube.com/watch?v=LnQo8Gi59Fw",
+                        thumbnail: "https://img.youtube.com/vi/LnQo8Gi59Fw/mqdefault.jpg",
+                        duration: "00:55",
                         views: 1520,
-                        publishedDate: "2023-04-18"
+                        publishedDate: "2025-11-17"
                     },
                     { 
-                        id: 68, 
+                        id: 72, 
                         title: "Reporte resumido de ventas", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "9:20",
+                        url: "https://www.youtube.com/watch?v=4mLYs5CxMAg",
+                        thumbnail: "https://img.youtube.com/vi/4mLYs5CxMAg/mqdefault.jpg",
+                        duration: "00:48",
                         views: 1350,
-                        publishedDate: "2023-04-08"
+                        publishedDate: "2025-11-22"
                     },
                     { 
-                        id: 69, 
+                        id: 73, 
                         title: "Libro mayor", 
                         url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
                         thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
@@ -742,14 +778,31 @@
                         publishedDate: "2023-03-28"
                     },
                     { 
-                        id: 70, 
+                        id: 74, 
                         title: "SIRE", 
-                        url: "https://www.youtube.com/watch?v=X96ztlwvgcM",
-                        thumbnail: "https://img.youtube.com/vi/X96ztlwvgcM/mqdefault.jpg",
-                        duration: "14:30",
+                        url: "https://www.youtube.com/watch?v=Vgw2aart8zo",
+                        thumbnail: "https://img.youtube.com/vi/Vgw2aart8zo/mqdefault.jpg",
+                        duration: "02:12",
                         views: 1850,
-                        publishedDate: "2023-03-18"
+                        publishedDate: "2025-11-22"
                     }
+                ]
+            },
+            {
+                id: 13,
+                title: "Aplicaciones",
+                icon: "fas fa-desktop",
+                videos: [
+                    { 
+                        id: 75, 
+                        title: "Instalacion de aplicativo", 
+                        url: "https://www.youtube.com/watch?v=uPTO1KtwD1o",
+                        thumbnail: "https://img.youtube.com/vi/uPTO1KtwD1o/mqdefault.jpg",
+                        duration: "01:43",
+                        views: 1920,
+                        publishedDate: "2025-11-24"
+                    },
+
                 ]
             }
         ];
