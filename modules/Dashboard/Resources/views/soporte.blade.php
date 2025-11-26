@@ -894,7 +894,7 @@
                     const videoCount = category.videos.length;
                     
                     columnHTML += `
-                        <div class="accordion" data-category="${category.id}">
+                        <div class="accordion-soporte" data-category="${category.id}">
                             <div class="accordion-header">
                                 <button class="accordion-button">
                                     <span><i class="${category.icon}"></i> ${category.title} <span class="category-counter">${videoCount}</span></span>
