@@ -22254,6 +22254,7 @@ html.sidebar-white .el-button--primary {
     border: 1px solid var(--black-highlight);
     border-radius: 10px;
     margin-top: 10px;
+    margin-right: 5px;
 }
 /* cabecera de tabla */
 .table th, .table thead th {

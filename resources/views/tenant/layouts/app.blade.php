@@ -37,7 +37,7 @@
     <meta name="robots" content="noindex">
 
     <!-- Pixel Code - https://foculus.work/ -->
-    <script defer src="https://foculus.work/pixel/oKIA68Lt0e5WSnMf"></script>
+    {{--<script defer src="https://foculus.work/pixel/oKIA68Lt0e5WSnMf"></script>--}}
     <!-- END Pixel Code -->
 
     <script>
@@ -75,9 +75,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('porto-light/master/style-switcher/style-switcher.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('porto-light/css/tukifac.css') }}?v=0.0.8" /><!--tukifac-->
-    <link rel="stylesheet" href="{{ asset('css/tukifac-inicio.css') }}?v=0.0.05" /><!--tukifac-->
-    <link rel="stylesheet" href="{{ asset('css/tukifac-soporte.css') }}?v=0.0.03" /><!--tukifac-->
+    <link rel="stylesheet" href="{{ asset('porto-light/css/tukifac.css') }}?v=0.0.10" /><!--tukifac-->
+    <link rel="stylesheet" href="{{ asset('css/tukifac-inicio.css') }}?v=0.0.06" /><!--tukifac-->
+    <link rel="stylesheet" href="{{ asset('css/tukifac-soporte.css') }}?v=0.0.04" /><!--tukifac-->
     {{--<link rel="stylesheet" href="{{ asset('porto-light/css/theme.css') }}" />--}}
     {{--<link rel="stylesheet" href="{{ asset('porto-light/css/custom.css') }}" />
 
