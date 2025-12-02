@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="tukifac-dashboard">
-    <div class="tukifac-hero-banner">
+    <div class="tukifac-hero-banner" style="background: #f4f4f4 url('{{ asset('storage/EMPRENDEDOR-TK1.webp') }}');">
         <div class="tukifac-hero-content">
             <span class="tukifac-hero-title">Aprende a utilizar Tukifac <br> con <span class="tukifac-hero-highlight">nuestros tutoriales</span></span>
         </div>
@@ -31,7 +31,7 @@
                         <span class="tukifac-tool-title-secondary">Venta rápida</span>
                     </div>
                     <div class="tukifac-tool-image">
-                        <img alt="Venta rápida" loading="lazy" width="150" height="150" decoding="async" src="https://tnyywwxijfmggxfzrlex.supabase.co/storage/v1/object/public/public_images/venta-rapida-tukifac-img.webp">
+                        <img alt="Venta rápida" loading="lazy" width="150" height="150" decoding="async" src="{{ asset('storage/venta-rapida-tukifac-img.webp') }}">
                     </div>
                     <div class="tukifac-tool-arrow">
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 13 13" width="10" height="10">
@@ -44,7 +44,7 @@
             <a class="tukifac-tool-card tukifac-tool-products" href="/items">
                 <div class="tukifac-tool-content">
                     <div class="tukifac-tool-image-left">
-                        <img alt="Gestión de productos" loading="lazy" decoding="async" src="https://tnyywwxijfmggxfzrlex.supabase.co/storage/v1/object/public/public_images/stock-tukifac-img.webp">
+                        <img alt="Gestión de productos" loading="lazy" decoding="async" src="{{ asset('storage/stock-tukifac-img.webp') }}">
                     </div>
                     <div class="tukifac-tool-info-right">
                         <span class="tukifac-tool-badge">Herramienta</span>
@@ -71,7 +71,7 @@
                         <span class="tukifac-tool-title-secondary">Documentos</span>
                     </div>
                     <div class="tukifac-tool-image-bottom">
-                        <img alt="Búsqueda de documentos" loading="lazy" width="150" height="130" decoding="async" src="https://tnyywwxijfmggxfzrlex.supabase.co/storage/v1/object/public/public_images/busqueda-doc-tukifac-img.webp">
+                        <img alt="Búsqueda de documentos" loading="lazy" width="150" height="130" decoding="async" src="{{ asset('storage/busqueda-doc-tukifac-img.webp') }}">
                     </div>
                 </div>
                 <div class="tukifac-tool-arrow">
@@ -89,7 +89,7 @@
                         <span class="tukifac-tool-title-secondary">Reportes</span>
                     </div>
                     <div class="tukifac-tool-image-bottom">
-                        <img alt="Reportes y documentos" loading="lazy" width="150" height="130" decoding="async" src="https://tnyywwxijfmggxfzrlex.supabase.co/storage/v1/object/public/public_images/docs-tukifac-img.webp">
+                        <img alt="Reportes y documentos" loading="lazy" width="150" height="130" decoding="async" src="{{ asset('storage/docs-tukifac-img.webp') }}">
                     </div>
                 </div>
                 <div class="tukifac-tool-arrow">

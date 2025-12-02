@@ -114,7 +114,7 @@ a:active {
 
 /*tukifac*/
 .header-background {
-    background: #f4f4f4 url("https://tukipos.vercel.app/top_nav_s445.png");
+    /*background: #f4f4f4 url("{{ asset('storage/top_nav_s445.png') }}");*/
     background-repeat: no-repeat !important;
     background-size: 100% auto !important;
     background-attachment: fixed !important;

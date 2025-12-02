@@ -17,7 +17,7 @@
 /* Banner principal */
 .tukifac-hero-banner {
     border-radius: 0.75rem;
-    background-image: url("https://tnyywwxijfmggxfzrlex.supabase.co/storage/v1/object/public/public_images/EMPRENDEDOR-TK1.webp");
+   /* background-image: url("https://tnyywwxijfmggxfzrlex.supabase.co/storage/v1/object/public/public_images/EMPRENDEDOR-TK1.webp");*/
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;

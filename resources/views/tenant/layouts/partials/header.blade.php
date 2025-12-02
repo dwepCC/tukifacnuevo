@@ -820,56 +820,61 @@
 <script> 
 /*tukifac*/
 
+function renderInfoPlan(data){
+    if (data.success == true) {
+        $('#plan_name').text('Plan: ' + data.plan_name);
+        $('#status_plan').text(data.status_plan);
+        $('#payment_date').text(data.payment_date);
+        const daysInfoElement = $('#days_indicator');
+        daysInfoElement.removeClass('text-warning text-danger text-success');
+        if (data.days_overdue > 0) {
+            daysInfoElement.text(data.days_overdue + ' día(s) de atraso');
+            daysInfoElement.addClass('text-danger');
+            $('#days_indicator').show();
+        } else if (data.days_remaining > 0) {
+            daysInfoElement.text(data.days_remaining + ' día(s) restantes');
+            daysInfoElement.addClass('text-warning');
+            $('#days_indicator').show();
+        } else {
+            if (data.has_pending_payment) {
+                daysInfoElement.text('Fecha de pago hoy');
+                daysInfoElement.addClass('text-warning');
+                $('#days_indicator').show();
+            } else {
+                $('#days_indicator').hide();
+            }
+        }
+        if (data.has_pending_payment) {
+            $('.pending-payment-section').show();
+        } else {
+            $('.pending-payment-section').hide();
+        }
+    }
+}
+
 function showInfoPlan(){
+    var userId = {!! json_encode(auth()->id()) !!};
+    var cacheKey = 'tukifac.info_plan.' + userId;
+    var ttl = 3600000;
+    try {
+        var cached = localStorage.getItem(cacheKey);
+        if (cached) {
+            var obj = JSON.parse(cached);
+            if (obj && obj.data && obj.cachedAt && (Date.now() - obj.cachedAt) < ttl) {
+                renderInfoPlan(obj.data);
+                return;
+            }
+        }
+    } catch (e) {}
     $.ajax({
         url: "{{ url('cuenta/info_plan') }}",
         method: 'get',
         dataType: 'JSON',
         success: function (data) {
-            console.log('Datos recibidos:', data);
-            if (data.success == true) {
-                $('#plan_name').text('Plan: ' + data.plan_name);
-                $('#status_plan').text(data.status_plan);
-                
-                // Mostrar fecha de pago (si hay pago pendiente)
-                //if (data.has_pending_payment) {
-                    $('#payment_date').text(data.payment_date);
-                  //  $('#payment_date_row').show(); // Mostrar la fila de fecha de pago
-                /*} else {
-                    $('#payment_date_row').hide(); // Ocultar la fila de fecha de pago
-                }*/
-                
-                // Evaluar qué información de días mostrar
-                const daysInfoElement = $('#days_indicator');
-                daysInfoElement.removeClass('text-warning text-danger text-success');
-                
-                if (data.days_overdue > 0) {
-                    // Mostrar días vencidos
-                    daysInfoElement.text( data.days_overdue + ' día(s) de atraso');
-                    daysInfoElement.addClass('text-danger');
-                    $('#days_indicator').show();
-                } else if (data.days_remaining > 0) {
-                    // Mostrar días faltantes
-                    daysInfoElement.text(data.days_remaining + ' día(s) restantes');
-                    daysInfoElement.addClass('text-warning');
-                    $('#days_indicator').show();
-                } else {
-                    if (data.has_pending_payment) {
-                        daysInfoElement.text('Fecha de pago hoy');
-                        daysInfoElement.addClass('text-warning');
-                        $('#days_indicator').show();
-                    } else {
-                        $('#days_indicator').hide(); // Ocultar si no hay información de días
-                    }
-                }
-                
-                // Mostrar/u ocultar sección de pago pendiente
-                if (data.has_pending_payment) {
-                    $('.pending-payment-section').show();
-                } else {
-                    $('.pending-payment-section').hide();
-                }
-            }
+            try {
+                localStorage.setItem(cacheKey, JSON.stringify({data: data, cachedAt: Date.now()}));
+            } catch (e) {}
+            renderInfoPlan(data);
         },
         error: function (error_data) {
             console.log('Error:', error_data);
@@ -878,8 +883,17 @@ function showInfoPlan(){
 }
 
 $(document).ready(function() {
-    // Se ejecuta cuando el DOM está completamente cargado
     showInfoPlan();
+    try {
+        var userId = {!! json_encode(auth()->id()) !!};
+        var cacheKey = 'tukifac.info_plan.' + userId;
+        var forms = document.querySelectorAll('form#logout-form');
+        forms.forEach(function(f){
+            f.addEventListener('submit', function(){
+                try { localStorage.removeItem(cacheKey); } catch(e) {}
+            });
+        });
+    } catch(e) {}
 });
 /*tukifac*/
 </script>

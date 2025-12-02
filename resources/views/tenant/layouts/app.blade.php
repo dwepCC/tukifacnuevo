@@ -75,8 +75,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('porto-light/master/style-switcher/style-switcher.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('porto-light/css/tukifac.css') }}?v=0.0.10" /><!--tukifac-->
-    <link rel="stylesheet" href="{{ asset('css/tukifac-inicio.css') }}?v=0.0.06" /><!--tukifac-->
+    <link rel="stylesheet" href="{{ asset('porto-light/css/tukifac.css') }}?v=0.0.12" /><!--tukifac-->
+    <link rel="stylesheet" href="{{ asset('css/tukifac-inicio.css') }}?v=0.0.07" /><!--tukifac-->
     <link rel="stylesheet" href="{{ asset('css/tukifac-soporte.css') }}?v=0.0.04" /><!--tukifac-->
     {{--<link rel="stylesheet" href="{{ asset('porto-light/css/theme.css') }}" />--}}
     {{--<link rel="stylesheet" href="{{ asset('porto-light/css/custom.css') }}" />
@@ -231,7 +231,7 @@ html.dark .global-loader p {
         <link rel="shortcut icon" type="image/png" href="{{ asset($vc_company->favicon) }}" />
     @endif
 
-    <script async src="https://social.buho.la/pixel/y9nonmie9j8dkwha20ct2ua7nwsywi2m"></script>
+    {{--<script async src="https://social.buho.la/pixel/y9nonmie9j8dkwha20ct2ua7nwsywi2m"></script>--}}
 </head>
 
 <body class="pr-0"
@@ -253,7 +253,7 @@ html.dark .global-loader p {
         <!-- start: header -->
         {{-- @include('tenant.layouts.partials.header') --}}
         <!-- end: header -->
-        <div class="header-background"></div>
+        <div class="header-background" style="background: #f4f4f4 url('{{ asset('storage/top_nav_s445.png') }}');"></div>
         <div class="inner-wrapper">
             <!-- start: sidebar -->
             @include('tenant.layouts.partials.sidebar')
