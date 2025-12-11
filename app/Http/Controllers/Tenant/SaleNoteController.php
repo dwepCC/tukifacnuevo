@@ -449,9 +449,30 @@ class SaleNoteController extends Controller
 
         $records = $this->getRecords($request);
 
-        /* $records = new SaleNoteCollection($records->paginate(config('tenant.items_per_page')));
-        dd($records); */
-        return new SaleNoteCollection($records->paginate(config('tenant.items_per_page')));
+        //if ($request && ($request->has('light') && filter_var($request->light, FILTER_VALIDATE_BOOLEAN))) {
+            $records->setEagerLoads([]);
+            $records->with([
+                'person:id,name,number',
+                'state_type:id,description',
+            ]);
+            $records->select([
+                'id',
+                'external_id',
+                'date_of_issue',
+                'series',
+                'number',
+                'customer_id',
+                'currency_type_id',
+                'total',
+                'state_type_id',
+                'paid',
+                'total_canceled',
+            ]);
+            //return new \App\Http\Resources\Tenant\SaleNoteLightCollection($records->paginate(config('tenant.items_per_page')));
+            return new \App\Http\Resources\Tenant\SaleNoteLightCollection($records->paginate(10));
+        //}
+
+        //return new SaleNoteCollection($records->paginate(config('tenant.items_per_page')));
 
     }
 

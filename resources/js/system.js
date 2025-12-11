@@ -1,7 +1,6 @@
 import './bootstrap';
 
-import 'bootstrap/dist/js/bootstrap.bundle.js'; // Incluye Popper
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/tailwind.css';
 
 import Vue from 'vue'
 import store from './store'

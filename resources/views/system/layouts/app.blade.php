@@ -21,34 +21,18 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
-    {{-- <link rel="stylesheet" href="{{ asset('porto-light/vendor/bootstrap/css/bootstrap.css') }}" /> --}}
-    <link rel="stylesheet" href="{{ asset('porto-light/vendor/animate/animate.css') }}" />
-    <link rel="stylesheet" href="{{ asset('porto-light/vendor/font-awesome/css/fontawesome-all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('porto-light/vendor/select2/css/select2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('porto-light/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('porto-light/vendor/datatables/media/css/dataTables.bootstrap4.css') }}" />
-    <link rel="stylesheet" href="{{ asset('porto-light/css/theme.css') }}?v=0.0.1" />
-    <link rel="stylesheet" href="{{ asset('porto-light/css/custom.css') }}?v=0.0.1" />
-    <link rel="stylesheet" href="{{ asset('theme/admin_styles.css') }}?v=0.0.2" />
-    @if (file_exists(public_path('theme/custom_styles.css')))
-        <link rel="stylesheet" href="{{ asset('theme/custom_styles.css') }}" />
-    @endif
+    
 
     {{--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" />
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
 
     <!-- Specific Page Vendor CSS -->
     <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.css')}}" />
     <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.theme.css')}}" />
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/select2/css/select2.css')}}" />
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}" />
+    
 
     <!-- Daterange picker plugins css -->
-    <link href="{{ asset('porto-light/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css') }}" rel="stylesheet">
-    <link href="{{ asset('porto-light/vendor/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />
+    
 
     <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.css')}}" />
 
@@ -56,17 +40,17 @@
     <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script>
 
     <style>
-        .descarga {
-            color:black;
-            padding:5px;
-        }
-        html.sidebar-light:not(.dark) ul.nav-main > li.nav-active > a {
-            color: #0088CC;
-        }
-
+        .descarga { color:black; padding:5px; }
         ul.nav-main > li.nav-active > a {
-            box-shadow: 2px 0 0 #0088CC inset;
+            color: #1d4ed8;
+            background-color: #eff6ff;
+            border-radius: 0.375rem;
         }
+        #sidebar-left::-webkit-scrollbar { width: 8px; }
+        #sidebar-left::-webkit-scrollbar-track { background: transparent; }
+        #sidebar-left::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+        #sidebar-left::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        #sidebar-left { scrollbar-color: #cbd5e1 transparent; scrollbar-width: thin; }
     </style>
     <!-- vite aqui -->
     @vite(['resources/js/system.js'])
@@ -76,66 +60,45 @@
         <!-- start: header -->
         @include('system.layouts.partials.header')
         <!-- end: header -->
-        <div class="inner-wrapper">
+        <div class="inner-wrapper flex">
             <!-- start: sidebar -->
             @include('system.layouts.partials.sidebar')
             <!-- end: sidebar -->
-            <section role="main" class="content-body" id="main-wrapper">
+            <section role="main" class="content-body flex-1 p-4" id="main-wrapper">
               @yield('content')
             </section>
         </div>
     </section>
 
-    <!-- Vendor -->
-    <script src="{{ asset('porto-light/vendor/jquery/jquery.js')}}"></script>
-    <script src="{{ asset('porto-light/vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
-    <script src="{{ asset('porto-light/vendor/jquery-cookie/jquery-cookie.js')}}"></script>
-        {{--<script src="{{asset('master/style-switcher/style.switcher.js')}}"></script>--}}
-    <script src="{{ asset('porto-light/vendor/popper/umd/popper.min.js')}}"></script>
-    <!-- <script src="{{ asset('porto-light/vendor/bootstrap/js/bootstrap.js')}}"></script> -->
-    {{-- <script src="{{ asset('porto-light/vendor/common/common.js')}}"></script> --}}
-    <script src="{{ asset('porto-light/vendor/nanoscroller/nanoscroller.js')}}"></script>
-    <script src="{{ asset('porto-light/vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
-    <script src="{{ asset('porto-light/vendor/jquery-placeholder/jquery-placeholder.js')}}"></script>
-    <script src="{{ asset('porto-light/vendor/select2/js/select2.js') }}"></script>
-    <script src="{{ asset('porto-light/vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{ asset('porto-light/vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
-
-    {{-- Specific Page Vendor --}}
-    <script src="{{asset('porto-light/vendor/jquery-ui/jquery-ui.js')}}"></script>
-    <script src="{{asset('porto-light/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js')}}"></script>
-    <script src="{{asset('porto-light/vendor/select2/js/select2.js')}}"></script>
-
-    <script src="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.js')}}"></script>
-
-    <!--<script src="assets/vendor/select2/js/select2.js"></script>-->
-    <script src="{{asset('porto-light/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>
-
-    <!-- Moment -->
-    <script src="{{ asset('porto-light/vendor/moment/moment.js') }}"></script>
-
-    <!-- DatePicker -->
-    <script src="{{asset('porto-light/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
-
-    <!-- Date range Plugin JavaScript -->
-    <script src="{{ asset('porto-light/vendor/bootstrap-timepicker/bootstrap-timepicker.js') }}"></script>
-    <script src="{{ asset('porto-light/vendor/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-
-    <!-- Theme Custom -->
-    <script src="{{asset('porto-light/js/custom.js')}}"></script>
-
-    <!-- Theme Initialization Files -->
-    {{-- <script src="{{asset('porto-light/js/theme.init.js')}}"></script> --}}
-
-    {{--<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>--}}
-    {{--<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>--}}
-
     @stack('scripts')
 
-    {{-- <script src="{{ asset('js/manifest.js') }}"></script> --}}
-    {{-- <script src="{{ asset('js/vendor.js') }}"></script> --}}
-    <!-- Theme Base, Components and Settings -->
-    <script src="{{asset('porto-light/js/theme.js')}}"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('#sidebar-left nav ul > li > a').forEach(function(anchor){
+            const next = anchor.nextElementSibling;
+            if (next && next.tagName === 'UL'){
+                anchor.classList.add('menu-collapse');
+                anchor.setAttribute('aria-expanded','false');
+                next.classList.add('submenu','hidden');
+                const chevron = document.createElement('i');
+                chevron.className = 'fas fa-chevron-down ml-auto text-gray-500 text-xs';
+                anchor.appendChild(chevron);
+                const hasActive = next.querySelector('li.nav-active');
+                if (hasActive) {
+                    next.classList.remove('hidden');
+                    anchor.setAttribute('aria-expanded','true');
+                    chevron.classList.add('rotate-180');
+                }
+                anchor.addEventListener('click', function(e){
+                    e.preventDefault();
+                    const isOpen = next.classList.toggle('hidden') === false;
+                    anchor.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    chevron.classList.toggle('rotate-180', isOpen);
+                });
+            }
+        });
+    });
+    </script>
 
 {{-- <?php echo config('app.limite_reseller'); ?> --}}
 </body>

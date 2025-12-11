@@ -7,9 +7,8 @@ import ElementUI from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/es'
 import locale from 'element-ui/lib/locale'
 
-// Cargar Bootstrap PRIMERO
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.js'; // Incluye Popper
+import '../css/tailwind.css';
+import '../css/icons/font-awesome/css/fontawesome-all.css';
 
 // Luego Element UI
 import '../sass/element-ui.scss';

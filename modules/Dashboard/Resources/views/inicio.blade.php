@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="tukifac-dashboard">
+{{--<div class="tukifac-dashboard">
     <div class="tukifac-hero-banner" style="background: #f4f4f4 url('{{ asset('storage/EMPRENDEDOR-TK1.webp') }}');">
         <div class="tukifac-hero-content">
             <span class="tukifac-hero-title">Aprende a utilizar Tukifac <br> con <span class="tukifac-hero-highlight">nuestros tutoriales</span></span>
@@ -115,5 +115,5 @@
             </a>
         </div>
     </div>
-</div>
+</div>--}}
 @endsection

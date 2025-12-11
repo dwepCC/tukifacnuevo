@@ -118,7 +118,7 @@ class CashController extends Controller
     {
         $cash = Cash::where([['user_id', $user_id],['state', true]])->first();
         return compact('cash');
-    }
+    } 
 
     
     /**

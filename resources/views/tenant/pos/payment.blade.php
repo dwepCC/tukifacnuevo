@@ -1,7 +1,6 @@
 @extends('tenant.layouts.app')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/pos.css') }}"/>
 @endpush
 
 @section('content')

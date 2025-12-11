@@ -1,13 +1,13 @@
 {
-  "_vue-clipboard-020ae813.js": {
+  "_vue-clipboard-c57fd805.js": {
     "assets": [
       "assets/element-icons-ab40a589.woff",
       "assets/element-icons-a30f5b3b.ttf"
     ],
     "css": [
-      "assets/vue-clipboard-d880a793.css"
+      "assets/vue-clipboard-2bf17821.css"
     ],
-    "file": "assets/vue-clipboard-020ae813.js"
+    "file": "assets/vue-clipboard-c57fd805.js"
   },
   "node_modules/element-ui/lib/theme-chalk/fonts/element-icons.ttf": {
     "file": "assets/element-icons-a30f5b3b.ttf",
@@ -17,38 +17,115 @@
     "file": "assets/element-icons-ab40a589.woff",
     "src": "node_modules/element-ui/lib/theme-chalk/fonts/element-icons.woff"
   },
+  "resources/css/icons/font-awesome/webfonts/fa-brands-400.eot": {
+    "file": "assets/fa-brands-400-b9c345f4.eot",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-brands-400.eot"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-brands-400.svg": {
+    "file": "assets/fa-brands-400-15fe8048.svg",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-brands-400.svg"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-8c507886.ttf",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-brands-400.ttf"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-brands-400.woff": {
+    "file": "assets/fa-brands-400-a25479bd.woff",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-brands-400.woff"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-9ae2326c.woff2",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-brands-400.woff2"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-regular-400.eot": {
+    "file": "assets/fa-regular-400-33a8657a.eot",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-regular-400.eot"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-regular-400.svg": {
+    "file": "assets/fa-regular-400-75e64a95.svg",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-regular-400.svg"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-c25d1ee7.ttf",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-regular-400.ttf"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-regular-400.woff": {
+    "file": "assets/fa-regular-400-e4d56ba6.woff",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-regular-400.woff"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-b2bb708d.woff2",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-regular-400.woff2"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-solid-900.eot": {
+    "file": "assets/fa-solid-900-31bb4aa0.eot",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-solid-900.eot"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-solid-900.svg": {
+    "file": "assets/fa-solid-900-54997dac.svg",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-solid-900.svg"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-7cf25b1d.ttf",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-solid-900.ttf"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-solid-900.woff": {
+    "file": "assets/fa-solid-900-e20ab4de.woff",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-solid-900.woff"
+  },
+  "resources/css/icons/font-awesome/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-08f7874f.woff2",
+    "src": "resources/css/icons/font-awesome/webfonts/fa-solid-900.woff2"
+  },
   "resources/js/app.css": {
-    "file": "assets/app-defaeaad.css",
+    "file": "assets/app-4da4a424.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
-    "css": [
-      "assets/app-defaeaad.css"
+    "assets": [
+      "assets/fa-brands-400-b9c345f4.eot",
+      "assets/fa-brands-400-9ae2326c.woff2",
+      "assets/fa-brands-400-a25479bd.woff",
+      "assets/fa-brands-400-8c507886.ttf",
+      "assets/fa-brands-400-15fe8048.svg",
+      "assets/fa-regular-400-33a8657a.eot",
+      "assets/fa-regular-400-b2bb708d.woff2",
+      "assets/fa-regular-400-e4d56ba6.woff",
+      "assets/fa-regular-400-c25d1ee7.ttf",
+      "assets/fa-regular-400-75e64a95.svg",
+      "assets/fa-solid-900-31bb4aa0.eot",
+      "assets/fa-solid-900-08f7874f.woff2",
+      "assets/fa-solid-900-e20ab4de.woff",
+      "assets/fa-solid-900-7cf25b1d.ttf",
+      "assets/fa-solid-900-54997dac.svg"
     ],
-    "file": "assets/app-179d386d.js",
+    "css": [
+      "assets/app-4da4a424.css"
+    ],
+    "file": "assets/app-27489f41.js",
     "imports": [
-      "_vue-clipboard-020ae813.js"
+      "_vue-clipboard-c57fd805.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/js/system.css": {
-    "file": "assets/system-c5a72492.css",
+    "file": "assets/system-47edefdc.css",
     "src": "resources/js/system.css"
   },
   "resources/js/system.js": {
     "css": [
-      "assets/system-c5a72492.css"
+      "assets/system-47edefdc.css"
     ],
-    "file": "assets/system-b1c3b026.js",
+    "file": "assets/system-978bbd89.js",
     "imports": [
-      "_vue-clipboard-020ae813.js"
+      "_vue-clipboard-c57fd805.js"
     ],
     "isEntry": true,
     "src": "resources/js/system.js"
   },
   "vue-clipboard.css": {
-    "file": "assets/vue-clipboard-d880a793.css",
+    "file": "assets/vue-clipboard-2bf17821.css",
     "src": "vue-clipboard.css"
   }
 }

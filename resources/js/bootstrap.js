@@ -1,12 +1,10 @@
 import Vue from 'vue';
 import lodash from 'lodash';
 import moment from 'moment';
-import * as Popper from '@popperjs/core';
 import jquery from 'jquery';
 
 window._ = lodash;
 window.moment = moment;
-window.Popper = Popper;
 window.$ = window.jQuery = jquery;
 
 // try {
@@ -15,6 +13,7 @@ window.$ = window.jQuery = jquery;
 // } catch (e) {}
 
 import axios from 'axios';
+import xmljs from 'xml-js';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -42,6 +41,14 @@ import './vendor/perfect-scrollbar.jquery.min';
 import './vendor/sidebarmenu';
 import './vendor/waves';
 import './vendor/custom';
+
+window.parseXMLToJSON = function(source){
+    try{
+        return JSON.parse(xmljs.xml2json(source, {compact: true, spaces: 0}));
+    }catch(e){
+        return null;
+    }
+};
 
 $(function () {
     const listElements = document.getElementsByClassName('nav-active');
