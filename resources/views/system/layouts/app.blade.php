@@ -27,17 +27,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" />
 
     <!-- Specific Page Vendor CSS -->
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.css')}}" />
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.theme.css')}}" />
+    {{-- jQuery UI eliminado - usando Tailwind CSS --}}
+    {{-- <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.css')}}" /> --}}
+    {{-- <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.theme.css')}}" /> --}}
     
 
     <!-- Daterange picker plugins css -->
     
 
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.css')}}" />
+    {{-- jQuery Loading eliminado - usar alternativas modernas --}}
+    {{-- <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.css')}}" /> --}}
 
     @stack('styles')
-    <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script>
+    {{-- Modernizr eliminado - no necesario en navegadores modernos --}}
+    {{-- <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script> --}}
 
     <style>
         .descarga { color:black; padding:5px; }

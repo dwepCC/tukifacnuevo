@@ -123,10 +123,19 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    let currentVoucherUrl = '';
+    // Esperar a que jQuery esté disponible
+    (function() {
+        function initDashboard() {
+            if (typeof window.$ === 'undefined' || typeof window.jQuery === 'undefined') {
+                setTimeout(initDashboard, 100);
+                return;
+            }
+            
+            // Código del dashboard aquí
+            let currentVoucherUrl = '';
 
-    function loadPendingPayments() {
-        $.ajax({
+            window.loadPendingPayments = function() {
+                $.ajax({
             url: "{{ url('clients/records/list') }}",
             method: 'GET',
             dataType: 'JSON',
@@ -229,7 +238,7 @@
         });
     }
 
-    function showPaymentVoucher(voucherUrl) {
+            window.showPaymentVoucher = function(voucherUrl) {
         //console.log('URL del comprobante:', voucherUrl);
         
         if (!voucherUrl) {
@@ -258,27 +267,27 @@
        // console.log('Modal debería estar visible');
     }
 
-    function openImageInNewTab() {
+            window.openImageInNewTab = function() {
         if (currentVoucherUrl) {
             window.open(currentVoucherUrl, '_blank');
         }
     }
 
-    function closeModal() {
+            window.closeModal = function() {
         $('#paymentDetailModal').removeClass('show');
         $('#paymentDetailModal').css('display', 'none');
         $('.modal-backdrop').remove();
         $('body').removeClass('modal-open');
     }
 
-    function formatDate(dateString) {
+            window.formatDate = function(dateString) {
         if (!dateString) return '-';
         return new Date(dateString).toLocaleDateString('es-PE', {
             year: 'numeric', month: '2-digit', day: '2-digit'
         });
     }
 
-    function formatDateTime(dateString) {
+            window.formatDateTime = function(dateString) {
         if (!dateString) return '-';
         return new Date(dateString).toLocaleDateString('es-PE', {
             year: 'numeric', month: '2-digit', day: '2-digit',
@@ -286,7 +295,7 @@
         });
     }
 
-    function approvePayment(paymentId) {
+            window.approvePayment = function(paymentId) {
         Swal.fire({
             title: '¿Confirmar aprobación?',
             text: "¿Está seguro de que desea APROBAR este pago? Esta acción no se puede deshacer.",
@@ -340,7 +349,7 @@
         });
     }
 
-    function rejectPayment(paymentId) {
+            window.rejectPayment = function(paymentId) {
         Swal.fire({
             title: '¿Confirmar anulación?',
             text: "¿Está seguro de que desea ANULAR este pago? Esta acción no se puede deshacer.",
@@ -396,7 +405,7 @@
         });
     }
 
-    function showLoading(message = 'Procesando...') {
+            window.showLoading = function(message = 'Procesando...') {
         $('body').append(`
             <div class="loading-overlay">
                 <div class="spinner-border text-primary" role="status"></div>
@@ -405,13 +414,22 @@
         `);
     }
 
-    function hideLoading() {
-        $('.loading-overlay').remove();
-    }
+            window.hideLoading = function() {
+                $('.loading-overlay').remove();
+            }
 
-    $(document).ready(function() {
-        loadPendingPayments();
-        setInterval(loadPendingPayments, 30000);
-    });
+            window.$(document).ready(function() {
+                window.loadPendingPayments();
+                setInterval(window.loadPendingPayments, 30000);
+            });
+        }
+        
+        // Iniciar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDashboard);
+        } else {
+            initDashboard();
+        }
+    })();
 </script>
 @endpush

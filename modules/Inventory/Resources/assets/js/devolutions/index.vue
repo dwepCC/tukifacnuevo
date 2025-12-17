@@ -24,7 +24,7 @@
                         <th>Motivo</th>
                         <th>Observación</th>
                         <th class="text-center">Descargas</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }" >
                         <!-- <td>{{ index }}</td> -->
                         <td class="text-start">{{ row.date_of_issue }}</td>

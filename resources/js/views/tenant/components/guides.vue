@@ -18,6 +18,7 @@
                     Guías
                 </label>
                 <table style="width: 100%">
+                    <tbody>
                     <tr v-for="(guide,index) in form.guides">
                         <td>
                             <el-select v-model="guide.document_type_id">
@@ -94,6 +95,7 @@
                             </label>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
 

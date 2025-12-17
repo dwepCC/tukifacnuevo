@@ -24,7 +24,7 @@
                         <th  class="text-center">Código</th>
                         <th >Estado sistema</th>
                         <th >Estado Sunat</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <td>{{ index }}</td>
                         <td>{{ row.soap_type_description }}</td>

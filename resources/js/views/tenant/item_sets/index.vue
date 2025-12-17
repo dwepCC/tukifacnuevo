@@ -79,7 +79,7 @@
                         <th class="text-end">P.Unitario (Venta)</th>
                         <th class="text-start">Tiene Igv</th>
                         <th class="text-end">Acciones</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <!-- <td>{{ index }}</td> -->
                         <td class="text-end">{{ row.internal_id }}</td>

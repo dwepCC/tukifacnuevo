@@ -2,19 +2,20 @@
     <el-dialog
         :close-on-click-modal="false"
         :title="titleDialog"
-        :visible="showDialog"
+        :model-value="showDialog"
         @close="close"
         @open="create">
         <form
+            class="space-y-6"
             autocomplete="off"
             @submit.prevent="submit">
             <div class="form-body">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="col-span-1">
                         <div
                             :class="{'has-danger': errors.number}"
-                            class="form-group">
-                            <label class="control-label">RUC</label>
+                            class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">RUC</label>
                             <!-- <el-input :disabled="form.is_update" v-model="form.number" :maxlength="11" dusk="number">
                                 <el-button :disabled="form.is_update" type="primary" slot="append" :loading="loading_search" icon="el-icon-search" @click.prevent="searchSunat">
                                     SUNAT
@@ -27,32 +28,32 @@
                                              @search="searchNumber"></x-input-service>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-span-1">
                         <div :class="{'has-danger': errors.name}"
-                             class="form-group">
-                            <label class="control-label">Nombre de la Empresa</label>
-                            <el-input
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Nombre de la Empresa</label>
+                            <el-input class="w-full"
                                 v-model="form.name"
                                 :disabled="form.is_update"
                                 dusk="name">
                             </el-input>
                             <small
                                 v-if="errors.name"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.name[0]">
                             </small>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 url-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="col-span-1 url-container">
                         <div v-if="form.is_update"
                              :class="{'has-danger': (errors.subdomain || errors.uuid)}"
-                             class="form-group">
-                            <label class="control-label">
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">
                                 Nombre de Subdominio
                             </label>
-                            <el-input
+                            <el-input class="w-full"
                                 v-model="form.hostname"
                                 :disabled="form.is_update"
                                 dusk="name">
@@ -60,69 +61,69 @@
                         </div>
                         <div v-else
                              :class="{'has-danger': (errors.subdomain || errors.uuid)}"
-                             class="form-group">
-                            <label class="control-label">
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">
                                 Nombre de Subdominio
                             </label>
                             <el-input
-                                class="subdomain-input"
+                                class="subdomain-input w-full"
                                 v-model="form.subdomain"
                                 dusk="subdomain">
-                                <template slot="append">
-                                    <span class="url-text-ellipsis">{{ url_base }}</span>
+                                <template #append>
+                                    <span class="truncate text-gray-500">{{ url_base }}</span>
                                 </template>
                             </el-input>
                             <small
                                 v-if="errors.subdomain"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.subdomain[0]">
                             </small>
                             <small
                                 v-if="errors.uuid"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.uuid[0]">
                             </small>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-span-1">
                         <div :class="{'has-danger': errors.email}"
-                             class="form-group">
-                            <label class="control-label">
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">
                                 Correo de Acceso
                             </label>
-                            <el-input
+                            <el-input class="w-full"
                                 v-model="form.email"
                                 :disabled="form.is_update"
                                 dusk="email">
                             </el-input>
                             <small
                                 v-if="errors.email"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.email[0]">
                             </small>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                     <div v-if="!form.is_update"
-                         class="col-md-6">
+                         class="col-span-1">
                         <div :class="{'has-danger': (errors.password)}"
-                             class="form-group">
-                            <label class="control-label">
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">
                                 Contraseña
 
                                 <el-tooltip class="item" effect="dark" placement="top-start" v-if="regex_password_client">
                                     <i class="fa fa-info-circle"></i>
-                                    <div slot="content">
+                                    <template #content>
                                         <strong>FORMATO DE CONTRASEÑA</strong><br/><br/>
                                         La contraseña debe contener al menos una letra minúscula.<br/>
                                         La contraseña debe contener al menos una letra mayúscula.<br/>
                                         La contraseña debe contener al menos un dígito.<br/>
                                         La contraseña debe contener al menos un carácter especial [@.$!%*#?&-].<br/>
-                                    </div>
+                                    </template>
                                 </el-tooltip>
                             </label>
-                            <el-input
+                            <el-input class="w-full"
                                 v-model="form.password"
                                 :disabled="form.is_update"
                                 dusk="password"
@@ -131,18 +132,18 @@
                             </el-input>
                             <small
                                 v-if="errors.password"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.password[0]">
                             </small>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-span-1">
                         <div :class="{'has-danger': errors.plan_id}"
-                             class="form-group">
-                            <label class="control-label">
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">
                                 Plan
                             </label>
-                            <el-select
+                            <el-select class="w-full"
                                 v-model="form.plan_id"
                                 @change="changePlan"
                                 dusk="plan_id">
@@ -155,20 +156,20 @@
                             </el-select>
                             <small
                                 v-if="errors.plan_id"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.plan_id[0]">
                             </small>
                         </div>
                     </div>
 
                     <div v-if="!form.is_update"
-                         class="col-md-6">
+                         class="col-span-1">
                         <div :class="{'has-danger': errors.type}"
-                             class="form-group">
-                            <label class="control-label">
+                             class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">
                                 Perfil
                             </label>
-                            <el-select
+                            <el-select class="w-full"
                                 v-model="form.type"
                                 :disabled="form.is_update">
                                 <el-option
@@ -180,31 +181,31 @@
                             </el-select>
                             <small
                                 v-if="errors.type"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.type[0]">
                             </small>
                         </div>
                     </div>
-                    <div class="col-md-6 center-el-checkbox">
-                        <div v-if="form.plan_id" class="col-md-12 row" style="padding-left: 0;">
-                            <div class="col-md-6 mb-2 form-group">
-                                <label class="control-label">
+                    <div class="col-span-1">
+                        <div v-if="form.plan_id" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700">
                                     Precio
                                 </label>
-                                <el-input
+                                <el-input class="w-full"
                                     v-model="form.price"
                                     dusk="price"/>
                                 <small
                                     v-if="errors.price"
-                                    class="form-control-feedback"
+                                    class="text-red-600 text-xs"
                                     v-text="errors.price[0]">
                                 </small>
                             </div>
-                            <div class="col-md-6 mb-2 form-group">
-                                <label class="control-label">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700">
                                     Periodo
                                 </label>
-                                <el-select
+                                <el-select class="w-full"
                                     v-model="form.plan_period_id"
                                     dusk="plan_id">
                                     <el-option
@@ -216,13 +217,13 @@
                                 </el-select>
                                 <small
                                     v-if="errors.plan_period_id"
-                                    class="form-control-feedback"
+                                    class="text-red-600 text-xs"
                                     v-text="errors.plan_period_id[0]">
                                 </small>
                             </div>
                         </div>
                         <div :class="{'has-danger': errors.locked_emission}"
-                             class="form-group">
+                             class="mt-4">
                             <el-checkbox
                                 v-model="form.locked_emission"
                                 :disabled="form.is_update">
@@ -231,7 +232,7 @@
                             <br>
                             <small
                                 v-if="errors.locked_emission"
-                                class="form-control-feedback"
+                                class="text-red-600 text-xs"
                                 v-text="errors.locked_emission[0]">
                             </small>
                         </div>
@@ -242,9 +243,9 @@
                     <el-collapse-item
                         name="1"
                         title="Módulos">
-                        <div class="row">
-                            <span class="ms-4">Giro de negocio <small>(opcional)</small></span>
-                            <div class="col-12">
+                        <div class="space-y-4">
+                            <span class="ml-4">Giro de negocio <small>(opcional)</small></span>
+                            <div class="col-span-1">
                                 <el-radio-group v-model="business" @change="changeModules">
                                     <el-radio :label="1">Básico</el-radio>
                                     <el-radio :label="2">Farmacia</el-radio>
@@ -252,11 +253,12 @@
                                     <el-radio :label="4">Restaurante</el-radio>
                                 </el-radio-group>
                             </div>
-                            <div class="col-md-6">
-                                <span>
-                                    Habilitar módulos
-                                </span>
-                                <div class="form-group tree-container-admin">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="col-span-1">
+                                    <span>
+                                        Habilitar módulos
+                                    </span>
+                                <div class="p-4 border rounded bg-white shadow-sm">
                                     <el-tree
                                         ref="tree"
                                         :check-strictly="true"
@@ -269,28 +271,28 @@
                                         @check="FixChildren">
                                     </el-tree>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <span>
-                                    Habilitar apps
-                                </span>
-                                <div class="form-group tree-container-admin">
-                                    <el-tree
-                                        ref="Apptree"
-                                        :check-strictly="true"
-                                        :data="apps"
-                                        :props="defaultAppsProps"
-                                        accordion
-                                        highlight-current
-                                        node-key="id"
-                                        show-checkbox
-                                        @check="FixAppChildren">
-                                    </el-tree>
+                                <div class="col-span-1">
+                                    <span>
+                                        Habilitar apps
+                                    </span>
+                                    <div class="p-4 border rounded bg-white shadow-sm">
+                                        <el-tree
+                                            ref="Apptree"
+                                            :check-strictly="true"
+                                            :data="apps"
+                                            :props="defaultAppsProps"
+                                            accordion
+                                            highlight-current
+                                            node-key="id"
+                                            show-checkbox
+                                            @check="FixAppChildren">
+                                        </el-tree>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 center-el-checkbox mt-4">
+                            <div class="mt-4">
                                 <div :class="{'has-danger': errors.enable_list_product}"
-                                    class="form-group">
+                                    class="">
                                     <el-checkbox
                                         v-model="form.enable_list_product">
                                         Habilitar multiples listas de precios por producto
@@ -298,25 +300,26 @@
                                     <br>
                                     <small
                                         v-if="errors.enable_list_product"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.enable_list_product[0]">
                                     </small>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                     </el-collapse-item>
                     <el-collapse-item
                         name="2"
                         title="Entorno del sistema">
-                        <div class="row mt-2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
                             <div class="col-md-6">
                                 <div :class="{'has-danger': errors.soap_send_id}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         SOAP Envio
                                     </label>
-                                    <el-select
+                                    <el-select class="w-full"
                                         v-model="form.soap_send_id">
                                         <el-option
                                             v-for="(option, index) in soap_sends"
@@ -327,18 +330,18 @@
                                     </el-select>
                                     <small
                                         v-if="errors.soap_send_id"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.soap_send_id[0]">
                                     </small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div :class="{'has-danger': errors.soap_type_id}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         SOAP Tipo
                                     </label>
-                                    <el-select
+                                    <el-select class="w-full"
                                         v-model="form.soap_type_id">
                                         <el-option
                                             v-for="option in soap_types"
@@ -355,56 +358,56 @@
                                     </el-checkbox>
                                     <small
                                         v-if="errors.soap_type_id"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.soap_type_id[0]">
                                     </small>
                                 </div>
                             </div>
                         </div>
                         <template v-if="form.soap_type_id == '02' || toggle == true ">
-                            <div class="row">
-                                <div class="col-md-12 mt-2">
-                                    <h4 class="border-bottom">
+                            <div class="mt-2">
+                                <div class="mt-2">
+                                    <h4 class="border-b">
                                         Usuario Secundario Sunat
                                     </h4>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="col-span-1">
                                     <div :class="{'has-danger': errors.soap_username}"
-                                         class="form-group">
-                                        <label class="control-label">
+                                         class="space-y-2">
+                                        <label class="block text-sm font-medium text-gray-700">
                                             SOAP Usuario
                                             <span class="text-danger">*</span>
                                         </label>
-                                        <el-input
+                                        <el-input class="w-full"
                                             v-model="form.soap_username">
                                         </el-input>
-                                        <div class="sub-title text-muted">
+                                        <div class="text-gray-500 text-sm">
                                             <small>
                                                 RUC + Usuario. Ejemplo: 01234567890ELUSUARIO
                                             </small>
                                         </div>
                                         <small
                                             v-if="errors.soap_username"
-                                            class="form-control-feedback"
+                                            class="text-red-600 text-xs"
                                             v-text="errors.soap_username[0]">
                                         </small>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-span-1">
                                     <div :class="{'has-danger': errors.soap_password}"
-                                         class="form-group">
-                                        <label class="control-label">
+                                         class="space-y-2">
+                                        <label class="block text-sm font-medium text-gray-700">
                                             SOAP Password
                                             <span class="text-danger">*</span>
                                         </label>
-                                        <el-input
+                                        <el-input class="w-full"
                                             v-model="form.soap_password">
                                         </el-input>
                                         <small
                                             v-if="errors.soap_password"
-                                            class="form-control-feedback"
+                                            class="text-red-600 text-xs"
                                             v-text="errors.soap_password[0]">
                                         </small>
                                     </div>
@@ -412,46 +415,46 @@
                             </div>
                         </template>
                         <div v-if="form.soap_send_id == '02'"
-                             class="row">
-                            <div class="col-md-12">
+                             class="grid grid-cols-1">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.soap_url}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         SOAP Url
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.soap_url">
                                     </el-input>
                                     <small
                                         v-if="errors.soap_url"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.soap_url[0]">
                                     </small>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-md-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.password_certificate}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Contraseña certificado
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.password_certificate">
                                     </el-input>
                                     <small
                                         v-if="errors.password_certificate"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.password_certificate[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.certificate}"
-                                     class="form-group">
-                                    <label>
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Certificado pfx
                                     </label>
                                     <el-upload
@@ -463,25 +466,26 @@
                                         :on-error="errorUpload"
                                         :on-success="successUpload"
                                         :show-file-list="false">
-                                        <el-button slot="trigger"
-                                                   type="primary">
-                                            Selecciona un archivo
-                                        </el-button>
+                                        <template #trigger>
+                                            <el-button type="primary">
+                                                Selecciona un archivo
+                                            </el-button>
+                                        </template>
                                     </el-upload>
                                     <small
                                         v-if="errors.certificate"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.certificate[0]">
                                     </small>
                                 </div>
                             </div>
                             <div v-show="form.is_update == false && certificate_admin"
-                                 class="col-md-4">
-                                <div class="form-group">
-                                    <label class="control-label">
+                                 class="col-span-1">
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Archivo cargado (Administrador)
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="certificate_admin"
                                         :disabled="true">
                                     </el-input>
@@ -489,12 +493,12 @@
                                 </div>
                             </div>
                             <div v-show="form.is_update == true"
-                                 class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">
+                                 class="md:col-span-2 col-span-1">
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Archivo cargado (Cliente) {{ form.certificate ? '(1)' : '(0)' }}
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.certificate"
                                         :disabled="true">
                                     </el-input>
@@ -507,99 +511,99 @@
 
                     <el-collapse-item name="3"
                                       title="Configuracion de correo">
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.smtp_host}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Dirección del host de correo
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.smtp_host">
                                     </el-input>
                                     <small
                                         v-if="errors.smtp_host"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.smtp_host[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.smtp_port}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Puerto del host de correo
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.smtp_port">
                                     </el-input>
                                     <small
                                         v-if="errors.smtp_port"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.smtp_port[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.smtp_user}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Nombre de usuario de correo
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.smtp_user">
                                     </el-input>
                                     <small
                                         v-if="errors.smtp_user"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.smtp_user[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.smtp_password}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Contraseña del usuario de correo
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.smtp_password"
                                         dusk="password"
                                         type="password">
                                     </el-input>
                                     <small
                                         v-if="errors.smtp_password"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.smtp_password[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.smtp_encryption}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Encriptación de correo
                                     </label>
                                     <el-select
                                         v-model="form.smtp_encryption"
-                                        style="width: 100%">
+                                        class="w-full">
                                         <el-option label="SSL" value="ssl"></el-option>
                                         <el-option label="TLS" value="tls"></el-option>
                                         <el-option label="Ninguna" value=""></el-option>
                                     </el-select>
                                     <small
                                         v-if="errors.smtp_encryption"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.smtp_encryption[0]">
                                     </small>
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group p-t-20">
+                            <div class="col-span-1">
+                                <div class="pt-5">
                                     <a
                                         :href="'https://docs.google.com/document/d/1ix2vPsiqSoK9jNAOF2gPjWhNa3BdajU5x8I5aBvEz0o/edit?usp=sharing'"
-                                        class="control-label"
+                                        class="text-sm text-blue-600 hover:text-blue-700"
                                         target="_new"
                                     >
                                         Para correos Gmail verificar el manual
@@ -611,51 +615,51 @@
                     <!-- Configuracion de correo -->
                     <el-collapse-item name="4"
                                       title="Información de contacto">
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.client_name}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Nombre del cliente
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.client_name">
                                     </el-input>
                                     <small
                                         v-if="errors.client_name"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.client_name[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.contact_email}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Correo de contacto
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.contact_email">
                                     </el-input>
                                     <small
                                         v-if="errors.contact_email"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.contact_email[0]">
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-span-1">
                                 <div :class="{'has-danger': errors.phone_ws}"
-                                     class="form-group">
-                                    <label class="control-label">
+                                     class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
                                         Nümero de WhatsApp
                                     </label>
-                                    <el-input
+                                    <el-input class="w-full"
                                         v-model="form.phone_ws">
                                     </el-input>
                                     <small
                                         v-if="errors.phone_ws"
-                                        class="form-control-feedback"
+                                        class="text-red-600 text-xs"
                                         v-text="errors.phone_ws[0]">
                                     </small>
                                 </div>
@@ -665,9 +669,9 @@
 
                 </el-collapse>
 
-                <div class="row">
-                    <div class="col-md-6 center-el-checkbox mt-4">
-                        <div class="form-group">
+                <div class="grid grid-cols-1">
+                    <div class="col-span-1 mt-4">
+                        <div class="">
                             <el-checkbox
                                 v-model="form.config_system_env">
                                 ¿ Permitir a la empresa cambiar la configuración de producción ?
@@ -677,9 +681,9 @@
                     </div>
                 </div>
             </div>
-            <div class="form-actions text-end pt-2">
+            <div class="pt-2 flex justify-end space-x-3">
                 <el-button
-                    class="second-buton"
+                    class=""
                     @click.prevent="close()">
                     Cancelar
                 </el-button>
@@ -745,8 +749,10 @@
 </style>
 <script>
 import {serviceNumber} from '../../../mixins/functions'
+import template from '../configuration/partials/template.vue'
 
 export default {
+  components: { template },
     mixins: [serviceNumber],
     props: ['showDialog', 'recordId'],
     data() {

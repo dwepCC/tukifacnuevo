@@ -1,6 +1,6 @@
 <template>
     <div :class="colClass?colClass:'col-12'">
-        <el-input v-model="wsPhone">
+        <el-input v-model="localPhone" @input="$emit('update:wsPhone', $event)">
             <template slot="prepend">+51</template>
             <template slot="append">
                 <el-tooltip class="item"
@@ -33,8 +33,14 @@ export default {
             errors: {},
             button_disable: true,
             loading_submit: false,
-            resource: 'qrapi'
+            resource: 'qrapi',
+            localPhone: this.wsPhone || ''
             // text: 'Su comprobante de pago electrónico F001-4 ha sido generado correctamente',
+        }
+    },
+    watch: {
+        wsPhone(newVal) {
+            this.localPhone = newVal || ''
         }
     },
       computed: {
@@ -68,7 +74,7 @@ export default {
         },
         async sendQrChat() {
             this.loading_submit = true
-            if (this.wsPhone == '') {
+            if (this.localPhone == '') {
                 return this.$message.error('El número es obligatorio')
             }
 
@@ -100,7 +106,7 @@ export default {
         setForm(base64file, full_filename) {
             this.form = {
                 file: base64file,
-                number: `51${this.wsPhone}`,
+                number: `51${this.localPhone}`,
                 message: this.wsMessage,
                 filename: full_filename 
             }

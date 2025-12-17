@@ -28,30 +28,34 @@
       </div>
       <div class="card-body border-bottom" v-if="code_ticket !== null">
         <table class="table table-unstyled mb-0">
-          <tr>
-            <th>Ticket Actual</th>
-            <th>Estado</th>
-            <th class="ps-3">Página</th>
-            <th></th>
-          </tr>
-          <tr>
-            <td>{{ code_ticket }}</td>
-            <td>{{ states[status_ticket] }}</td>
-            <td width="10%">
-              <el-input v-model="page" label="Pagina" size="mini" type="number"></el-input>
-            </td>
-            <td class="text-end">
-              <el-button
-                type="primary"
-                @click="queryTicket"
-                :disabled="code_ticket == null"
-                class="bg-primary"
-                size="mini"
-                :loading="loading_query">
-                Consultar
-              </el-button>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Ticket Actual</th>
+              <th>Estado</th>
+              <th class="ps-3">Página</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ code_ticket }}</td>
+              <td>{{ states[status_ticket] }}</td>
+              <td width="10%">
+                <el-input v-model="page" label="Pagina" size="mini" type="number"></el-input>
+              </td>
+              <td class="text-end">
+                <el-button
+                  type="primary"
+                  @click="queryTicket"
+                  :disabled="code_ticket == null"
+                  class="bg-primary"
+                  size="mini"
+                  :loading="loading_query">
+                  Consultar
+                </el-button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="card-body">

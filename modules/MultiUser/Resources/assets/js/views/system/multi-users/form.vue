@@ -17,14 +17,12 @@
                                 filterable
                                 @change="changeUser">
 
-                                <template v-for="option in users">
+                                <template v-for="option in users" :key="option.composed_id">
                                     <el-tooltip
-                                        :key="option.composed_id"
                                         :content="`Empresa origen: ${option.client_full_name}`"
                                         placement="left">
 
                                         <el-option 
-                                            :key="option.composed_id"
                                             :label="option.full_name"
                                             :value="option.composed_id"></el-option>
 

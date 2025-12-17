@@ -8,7 +8,7 @@
                     <div class="col-lg-9 col-md-8 col-sm-12 mb-2 p-0">
                         <div class="form-group filter-content">
                             <el-button
-                                type="secondary"
+                                type="default"
                                 class="btn-show-filter btn-show-filter-invoice mb-2 ms-2"
                                 :class="{ shift: see_more }"
                                 @click="clickSeeMore"
@@ -205,7 +205,7 @@
                                 @current-change="getRecords"
                                 layout="total, prev, pager, next"
                                 :total="pagination.total"
-                                :current-page.sync="pagination.current_page"
+                                v-model:current-page="pagination.current_page"
                                 :page-size="pagination.per_page">
                         </el-pagination>
                     </div>
@@ -225,7 +225,7 @@
 import moment from 'moment'
 import queryString from 'query-string'
 import $ from 'jquery'
-import {mapActions, mapState} from "vuex/dist/vuex.mjs";
+import {mapActions, mapState} from "@/stores/vuex-adapter";
 
 export default {
         props: {

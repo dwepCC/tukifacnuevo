@@ -24,7 +24,7 @@
                                 <th  class="text-center">Producto</th>
                                 <th  class="text-center">Cantidad</th>
                                 <th  class="text-center">Total de venta</th>
-                            <tr>
+                            </tr>
                             <tr slot-scope="{ index, row }">
                                 <td>{{ index }}</td>
                                 <td  class="text-start">{{row.series}}-{{row.number}}</td>

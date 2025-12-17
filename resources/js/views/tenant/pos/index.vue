@@ -253,8 +253,8 @@
                 <br />
 
                 <div v-if="place == 'cat'" class="row no-gutters">
-                    <template v-for="(item, index) in categories">
-                        <div class="col" :key="index">
+                    <template v-for="(item, index) in categories" :key="index">
+                        <div class="col">
                             <div
                                 @click="filterCategorie(item.id)"
                                 class="card p-0 m-0 mb-1 me-1 text-center"
@@ -276,8 +276,8 @@
                     class="product-pos-container"
                     :class="layout_mode"
                 >
-                    <template v-for="(item, index) in items">
-                        <div :key="index">
+                    <template v-for="(item, index) in items" :key="index">
+                        <div>
                             <section class="card product-item">
                                 <div
                                     class="card-body pointer px-2 pt-2"

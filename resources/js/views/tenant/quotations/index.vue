@@ -159,9 +159,9 @@
                         </td>
                         <td>{{ row.identifier }}</td>
                         <td>
-                            <template v-for="(document, i) in row.documents">
+                            <template v-for="(document, i) in row.documents" :key="i">
                                 <template v-if="document.is_voided_or_rejected">
-                                    <label :key="i" class="d-block text-danger">
+                                    <label class="d-block text-danger">
                                         {{ document.number_full }}
                                         <!-- {{ document.number_full }} ({{document.state_type_description}}) -->
                                     </label>
@@ -176,11 +176,10 @@
                             </template>
                         </td>
                         <td>
-                            <template v-for="(sale_note, i) in row.sale_notes">
-                                <label
-                                    :key="i"
-                                    v-text="sale_note.number_full"
-                                    class="d-block"
+                              <template v-for="(sale_note, i) in row.sale_notes" :key="i">
+                                  <label
+                                      v-text="sale_note.number_full"
+                                      class="d-block"
                                 ></label>
                             </template>
                         </td>
@@ -207,6 +206,7 @@
                             >
                                 <div class="col-md-12 mt-4">
                                     <table>
+                                        <tbody>
                                         <tr>
                                             <td><strong>O. Venta: </strong></td>
                                             <td>
@@ -233,6 +233,7 @@
                                                 }}</strong>
                                             </td>
                                         </tr>
+                                        </tbody>
                                     </table>
 
                                     <div class="table-responsive mt-4">

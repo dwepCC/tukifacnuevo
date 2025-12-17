@@ -1,4 +1,7 @@
-import Vue from 'vue'
+/**
+ * Tenant Components - Migrado a Vue 3
+ * Exporta función para registrar componentes en lugar de Vue.component global
+ */
 
 // Imports
 import TenantItemAditionalInfoSelector from './views/tenant/components/partials/item_extra_info.vue'
@@ -308,7 +311,7 @@ import TenantDigemidIndex from '../../modules/Digemid/Resources/assets/js/view/i
 import TenantSuscriptionClientIndex from '../../modules/Suscription/Resources/assets/js/clients/index.vue'
 import TenantSuscriptionPlansIndex from '../../modules/Suscription/Resources/assets/js/plans/index.vue'
 import TenantSuscriptionPaymentsIndex from '../../modules/Suscription/Resources/assets/js/payments/index.vue'
-import DataTablePaymentReceipt from '../js/components/DataTablePaymentReceipt.vue'
+import DataTablePaymentReceipt from './components/DataTablePaymentReceipt.vue'
 import TenantIndexPaymentReceipt from '../../modules/Suscription/Resources/assets/js/payment_receipt/index.vue'
 
 // Suscription - extras
@@ -365,372 +368,314 @@ import TenantQrChat from '@viewsModuleQrChatBuho/Configuration.vue'
 import TenantQrApi from '@viewsModuleQrApi/ConfigurationQrApi.vue'
 import TenantReportPendingAccountCommissionsIndex from '@viewsModuleReport/pending-account-commissions/index.vue'
 
-// Sire
-Vue.component('tenant-sire-index', TenantSireIndex);
-
-// Sire
-Vue.component('tenant-qr-chat', TenantQrChat);
-
-// QR Api
-Vue.component('tenant-qr-api', TenantQrApi);
-
-
-// Registrations
-Vue.component('tenant-item-aditional-info-selector', TenantItemAditionalInfoSelector)
-Vue.component('tenant-item-aditional-info-modal', TenantItemAditionalInfoModal)
-
-Vue.component('tenant-dashboard-index', TenantDashboardIndex)
-Vue.component('tenant-dashboard-sales-by-product', TenantDashboardSalesByProduct)
-
-Vue.component('x-graph', XGraph)
-Vue.component('x-graph-line', XGraphLine)
-
-Vue.component('tenant-signature-pse-index', TenantSignaturePseIndex)
-Vue.component('tenant-whatsapp-api-index', TenantWhatsappApiIndex)
-
-Vue.component('tenant-companies-form', TenantCompaniesForm)
-Vue.component('tenant-companies-logo', TenantCompaniesLogo)
-Vue.component('tenant-certificates-qztray', TenantCertificatesQztray)
-Vue.component('tenant-certificates-index', TenantCertificatesIndex)
-Vue.component('tenant-certificates-form', TenantCertificatesForm)
-Vue.component('tenant-configurations-form', TenantConfigurationsForm)
-Vue.component('tenant-configurations-form-purchases', TenantConfigurationsFormPurchases)
-Vue.component('tenant-configurations-visual', TenantConfigurationsVisual)
-Vue.component('tenant-configurations-pdf', TenantConfigurationsPdf)
-Vue.component('tenant-configurations-ticket-pdf', TenantConfigurationsTicketPdf)
-Vue.component('tenant-configurations-sale-notes', TenantConfigurationsSaleNotes)
-Vue.component('tenant-configurations-pdf-guide', TenantConfigurationsPdfGuide)
-Vue.component('tenant-configurations-preprinted-pdf', TenantConfigurationsPreprintedPdf)
-Vue.component('tenant-dialog-header-menu', TenantDialogHeaderMenu)
-
-Vue.component('tenant-bank_accounts-index', TenantBankAccountsIndex)
-Vue.component('tenant-items-index', TenantItemsIndex)
-Vue.component('tenant-persons-index', TenantPersonsIndex)
-Vue.component('tenant-person-form', TenantPersonForm)
-
-Vue.component('tenant-users-form', TenantUsersForm)
-Vue.component('tenant-documents-index', TenantDocumentsIndex)
-Vue.component('tenant-documents-invoice', TenantDocumentsInvoice)
-Vue.component('tenant-documents-invoice-generate', TenantDocumentsInvoiceGenerate)
-Vue.component('tenant-documents-invoicetensu', TenantDocumentsInvoicetensu)
-Vue.component('tenant-documents-note', TenantDocumentsNote)
-
-Vue.component('tenant-purchase-settlements-index', TenantPurchaseSettlementsIndex)
-Vue.component('tenant-purchase-settlements-form', TenantPurchaseSettlementsForm)
-
-Vue.component('tenant-documents-items-list', TenantDocumentsItemsList)
-Vue.component('tenant-summaries-index', TenantSummariesIndex)
-Vue.component('tenant-voided-index', TenantVoidedIndex)
-Vue.component('tenant-search-index', TenantSearchIndex)
-Vue.component('tenant-options-form', TenantOptionsForm)
-Vue.component('tenant-options-form-item', TenantOptionsFormItem)
-Vue.component('tenant-unit_types-index', TenantUnitTypesIndex)
-Vue.component('tenant-detraction_types-index', TenantDetractionTypesIndex)
-Vue.component('tenant-users-index', TenantUsersIndex)
-Vue.component('tenant-establishments-index', TenantEstablishmentsIndex)
-Vue.component('tenant-charge_discounts-index', TenantChargeDiscountsIndex)
-Vue.component('tenant-banks-index', TenantBanksIndex)
-Vue.component('tenant-exchange_rates-index', TenantExchangeRatesIndex)
-Vue.component('tenant-currency-types-index', TenantCurrencyTypesIndex)
-Vue.component('tenant-retentions-index', TenantRetentionsIndex)
-Vue.component('tenant-retentions-form', TenantRetentionsForm)
-Vue.component('tenant-perceptions-index', TenantPerceptionsIndex)
-Vue.component('tenant-perceptions-form', TenantPerceptionsForm)
-Vue.component('tenant-dispatches-index', TenantDispatchesIndex)
-
-Vue.component('tenant-dispatches-form', TenantDispatchesForm)
-Vue.component('tenant-dispatches-create', TenantDispatchesCreate)
-Vue.component('tenant-guides-modal', TenantGuidesModal)
-Vue.component('tenant-purchases-index', TenantPurchasesIndex)
-Vue.component('tenant-purchases-form', TenantPurchasesForm)
-Vue.component('tenant-purchases-edit', TenantPurchasesEdit)
-Vue.component('tenant-transfer-reason-types-index', TenantTransferReasonTypesIndex)
-
-Vue.component('tenant-dispatch_carrier-index', TenantDispatchCarrierIndex)
-Vue.component('tenant-dispatch_carrier-form', TenantDispatchCarrierForm)
-
-Vue.component('tenant-purchases-items', TenantPurchasesItems)
-Vue.component('tenant-attribute_types-index', TenantAttributeTypesIndex)
-Vue.component('tenant-calendar', TenantCalendar)
-Vue.component('tenant-warehouses', TenantWarehouses)
-Vue.component('tenant-calendar-quotation', TenantCalendarQuotation)
-Vue.component('tenant-product', TenantProduct)
-
-Vue.component('tenant-tasks-lists', TenantTasksLists)
-Vue.component('tenant-tasks-form', TenantTasksForm)
-Vue.component('tenant-reports-consistency-documents-lists', TenantReportsConsistencyDocumentsLists)
-Vue.component('tenant-contingencies-index', TenantContingenciesIndex)
-
-Vue.component('tenant-quotations-index', TenantQuotationsIndex)
-Vue.component('tenant-quotations-form', TenantQuotationsForm)
-Vue.component('tenant-quotations-edit', TenantQuotationsEdit)
-Vue.component('tenant-quotations-item-form', TenantQuotationsItemForm)
-
-Vue.component('tenant-sale-notes-index', TenantSaleNotesIndex)
-Vue.component('tenant-sale-notes-form', TenantSaleNotesForm)
-Vue.component('tenant-pos-index', TenantPosIndex)
-Vue.component('cash-index', CashIndex)
-Vue.component('tenant-card-brands-index', TenantCardBrandsIndex)
-Vue.component('tenant-pos-fast', TenantPosFast)
-Vue.component('tenant-pos-garage', TenantPosGarage)
-
-Vue.component('tenant-payment-method-index', TenantPaymentMethodIndex)
-
-Vue.component('inventory-index', InventoryIndex)
-Vue.component('inventory-transfers-index', InventoryTransfersIndex)
-Vue.component('warehouses-index', WarehousesIndex)
-Vue.component('tenant-report-kardex-index', TenantReportKardexIndex)
-Vue.component('tenant-inventories-form', TenantInventoriesForm)
-Vue.component('tenant-expenses-index', TenantExpensesIndex)
-Vue.component('tenant-expenses-form', TenantExpensesForm)
-Vue.component('tenant-account-export', TenantAccountExport)
-Vue.component('tenant-account-summary-report', TenantAccountSummaryReport)
-Vue.component('tenant-account-format', TenantAccountFormat)
-Vue.component('tenant-company-accounts', TenantCompanyAccounts)
-Vue.component('tenant-ledger-accounts', TenantLedgerAccounts)
-
-Vue.component('inventory-review-index', InventoryReviewIndex)
-Vue.component('tenant-inventory-report', TenantInventoryReport)
-
-Vue.component('tenant-inventory-color-index', TenantInventoryColorIndex)
-Vue.component('tenant-inventory-item-units-per-package-index', TenantInventoryItemUnitsPerPackageIndex)
-Vue.component('tenant-inventory-item-units-business', TenantInventoryItemUnitsBusiness)
-Vue.component('tenant-inventory-item-package-measurements', TenantInventoryItemPackageMeasurements)
-Vue.component('tenant-inventory-mold-cavities', TenantInventoryMoldCavities)
-Vue.component('tenant-inventory-mold-property', TenantInventoryMoldProperty)
-
-Vue.component('tenant-inventory-size-property', TenantInventorySizeProperty)
-Vue.component('tenant-inventory-item-status', TenantInventoryItemStatus)
-Vue.component('tenant-inventory-item-product-family', TenantInventoryItemProductFamily)
-Vue.component('tenant-inventory-extra-info-list', TenantInventoryExtraInfoList)
-
-Vue.component('tenant-inventory-devolutions-index', TenantInventoryDevolutionsIndex)
-Vue.component('tenant-inventory-devolutions-form', TenantInventoryDevolutionsForm)
-
-Vue.component('tenant-documents-not-sent', TenantDocumentsNotSent)
-Vue.component('tenant-report-purchases-index', TenantReportPurchasesIndex)
-Vue.component('tenant-report-documents-index', TenantReportDocumentsIndex)
-Vue.component('tenant-state-account-index', TenantStateAccountIndex)
-Vue.component('tenant-report-customers-index', TenantReportCustomersIndex)
-Vue.component('tenant-report-items-index', TenantReportItemsIndex)
-Vue.component('tenant-report-items-extra-index', TenantReportItemsExtraIndex)
-
-Vue.component('tenant-report-download-tray-index', TenantReportDownloadTrayIndex)
-
-Vue.component('tenant-report-guide-index', TenantReportGuideIndex)
-Vue.component('tenant-report-sale_notes-index', TenantReportSaleNotesIndex)
-Vue.component('tenant-report-quotations-index', TenantReportQuotationsIndex)
-Vue.component('tenant-report-cash-index', TenantReportCashIndex)
-Vue.component('tenant-index-configuration', TenantIndexConfiguration)
-Vue.component('tenant-report-document_hotels-index', TenantReportDocumentHotelsIndex)
-Vue.component('tenant-report_hotels-index', TenantReportHotelsIndex)
-Vue.component('tenant-report-commercial_analysis-index', TenantReportCommercialAnalysisIndex)
-Vue.component('tenant-offline-configurations-index', TenantOfflineConfigurationsIndex)
-Vue.component('tenant-series-configurations-index', TenantSeriesConfigurationsIndex)
-Vue.component('tenant-validate-documents-index', TenantValidateDocumentsIndex)
-Vue.component('tenant-report-document-detractions-index', TenantReportDocumentDetractionsIndex)
-Vue.component('tenant-report-commissions-index', TenantReportCommissionsIndex)
-Vue.component('tenant-report-order-notes-consolidated-index', TenantReportOrderNotesConsolidatedIndex)
-Vue.component('tenant-report-general-items-index', TenantReportGeneralItemsIndex)
-Vue.component('tenant-report-order-notes-general-index', TenantReportOrderNotesGeneralIndex)
-Vue.component('tenant-report-sales-consolidated-index', TenantReportSalesConsolidatedIndex)
-Vue.component('tenant-report-user-commissions-index', TenantReportUserCommissionsIndex)
-Vue.component('tenant-report-fixed-asset-purchases-index', TenantReportFixedAssetPurchasesIndex)
-Vue.component('tenant-report-massive-downloads-index', TenantReportMassiveDownloadsIndex)
-Vue.component('tenant-documents-regularize-shipping', TenantDocumentsRegularizeShipping)
-Vue.component('tenant-report-commissions-detail-index', TenantReportCommissionsDetailIndex)
-
-Vue.component('tenant-report-tips-index', TenantReportTipsIndex)
-
-Vue.component('tenant-categories-index', TenantCategoriesIndex)
-Vue.component('tenant-brands-index', TenantBrandsIndex)
-Vue.component('tenant-zone-index', TenantZoneIndex)
-Vue.component('tenant-incentives-index', TenantIncentivesIndex)
-Vue.component('tenant-item-lots-index', TenantItemLotsIndex)
-
-Vue.component('tenant-ecommerce-configuration-info', TenantEcommerceConfigurationInfo)
-Vue.component('tenant-ecommerce-configuration-culqi', TenantEcommerceConfigurationCulqi)
-Vue.component('tenant-ecommerce-configuration-paypal', TenantEcommerceConfigurationPaypal)
-Vue.component('tenant-ecommerce-configuration-logo', TenantEcommerceConfigurationLogo)
-Vue.component('tenant-ecommerce-configuration-social', TenantEcommerceConfigurationSocial)
-Vue.component('tenant-ecommerce-configuration-tag', TenantEcommerceConfigurationTag)
-Vue.component('tenant-ecommerce-item-sets-index', TenantEcommerceItemSetsIndex)
-Vue.component('tenant-ecommerce-configuration-links', TenantEcommerceConfigurationLinks)
-
-Vue.component('tenant-purchase-quotations-index', TenantPurchaseQuotationsIndex)
-Vue.component('tenant-purchase-quotations-form', TenantPurchaseQuotationsForm)
-
-Vue.component('tenant-purchase-orders-index', TenantPurchaseOrdersIndex)
-Vue.component('tenant-purchase-orders-form', TenantPurchaseOrdersForm)
-Vue.component('tenant-purchase-orders-generate', TenantPurchaseOrdersGenerate)
-
-Vue.component('moves-index', MovesIndex)
-Vue.component('inventory-form-masive', InventoryFormMasive)
-
-Vue.component('tenant-report-kardex-master', TenantReportKardexMaster)
-Vue.component('tenant-report-kardex-lots', TenantReportKardexLots)
-Vue.component('tenant-report-kardex-series', TenantReportKardexSeries)
-
-Vue.component('tenant-order-notes-index', TenantOrderNotesIndex)
-Vue.component('tenant-order-notes-form', TenantOrderNotesForm)
-Vue.component('tenant-order-notes-edit', TenantOrderNotesEdit)
-Vue.component('tenant-report-valued-kardex', TenantReportValuedKardex)
-Vue.component('tenant-mitiendape-config', TenantMitiendapeConfig)
-
-// Finance
-Vue.component('tenant-finance-global-payments-index', TenantFinanceGlobalPaymentsIndex)
-Vue.component('tenant-finance-balance-index', TenantFinanceBalanceIndex)
-Vue.component('tenant-finance-modal-transfer-between-accounts', TenantFinanceModalTransferBetweenAccounts)
-
-Vue.component('tenant-finance-payment-method-types-index', TenantFinancePaymentMethodTypesIndex)
-Vue.component('tenant-finance-unpaid-index', TenantFinanceUnpaidIndex)
-Vue.component('tenant-finance-to-pay-index', TenantFinanceToPayIndex)
-Vue.component('tenant-finance-income-index', TenantFinanceIncomeIndex)
-Vue.component('tenant-finance-income-form', TenantFinanceIncomeForm)
-Vue.component('tenant-income-types-index', TenantIncomeTypesIndex)
-Vue.component('tenant-income-reasons-index', TenantIncomeReasonsIndex)
-Vue.component('tenant-finance-movements-index', TenantFinanceMovementsIndex)
-
-// Sale
-Vue.component('tenant-sale-opportunities-index', TenantSaleOpportunitiesIndex)
-Vue.component('tenant-sale-opportunities-form', TenantSaleOpportunitiesForm)
-Vue.component('tenant-payment-method-types-index', TenantPaymentMethodTypesIndex)
-Vue.component('tenant-contracts-index', TenantContractsIndex)
-Vue.component('tenant-contracts-form', TenantContractsForm)
-Vue.component('tenant-production-orders-index', TenantProductionOrdersIndex)
-Vue.component('tenant-agents-index', TenantAgentsIndex)
-
-// Item
-Vue.component('tenant-web-platforms-index', TenantWebPlatformsIndex)
-Vue.component('tenant-item-detail-index', TenantItemDetailIndex)
-
-// Technical Services
-Vue.component('tenant-technical-services-index', TenantTechnicalServicesIndex)
-Vue.component('tenant-user-commissions-index', TenantUserCommissionsIndex)
-Vue.component('tenant-pending-account-commissions-index', TenantPendingAccountCommissionsIndex)
-
-// Purchase
-Vue.component('tenant-fixed-asset-items-index', TenantFixedAssetItemsIndex)
-Vue.component('tenant-fixed-asset-purchases-index', TenantFixedAssetPurchasesIndex)
-Vue.component('tenant-fixed-asset-purchases-form', TenantFixedAssetPurchasesForm)
-
-// Expense
-Vue.component('tenant-expense-types-index', TenantExpenseTypesIndex)
-Vue.component('tenant-expense-reasons-index', TenantExpenseReasonsIndex)
-Vue.component('tenant-expense-method-types-index', TenantExpenseMethodTypesIndex)
-
-Vue.component('tenant-drivers-index', TenantDriversIndex)
-Vue.component('tenant-dispatchers-index', TenantDispatchersIndex)
-Vue.component('tenant-transports-index', TenantTransportsIndex)
-Vue.component('tenant-origin_addresses-index', TenantOriginAddressesIndex)
-Vue.component('tenant-dispatch-addresses-index', TenantDispatchAddressesIndex)
-
-Vue.component('tenant-order-forms-index', TenantOrderFormsIndex)
-Vue.component('tenant-order-forms-form', TenantOrderFormsForm)
-
-Vue.component('tenant-multi-users-change-client', TenantMultiUsersChangeClient)
-
-// Hoteles
-Vue.component('tenant-hotel-rates', TenantHotelRates)
-Vue.component('tenant-hotel-categories', TenantHotelCategories)
-Vue.component('tenant-hotel-floors', TenantHotelFloors)
-Vue.component('tenant-hotel-rooms', TenantHotelRooms)
-Vue.component('tenant-hotel-reception', TenantHotelReception)
-Vue.component('tenant-hotel-sucursale', TenantHotelSucursale)
-Vue.component('tenant-hotel-rent', TenantHotelRent)
-Vue.component('tenant-hotel-rent-add-product', TenantHotelRentAddProduct)
-Vue.component('tenant-hotel-rent-checkout', TenantHotelRentCheckout)
-
-// Trámite documentario
-Vue.component('tenant-documentary-offices', TenantDocumentaryOffices)
-Vue.component('tenant-documentary-status', TenantDocumentaryStatus)
-Vue.component('tenant-documentary-processes', TenantDocumentaryProcesses)
-Vue.component('tenant-documentary-documents', TenantDocumentaryDocuments)
-Vue.component('tenant-documentary-actions', TenantDocumentaryActions)
-Vue.component('tenant-documentary-files', TenantDocumentaryFiles)
-Vue.component('tenant-documentary-requirements', TenantDocumentaryRequirements)
-Vue.component('tenant-documentary-statistic', TenantDocumentaryStatistic)
-
-// Trámite documentario Simplificado
-Vue.component('tenant-documentary-files-simplify', TenantDocumentaryFilesSimplify)
-Vue.component('tenant-documentary-files-simplify-form', TenantDocumentaryFilesSimplifyForm)
-
-// apiperu input
-Vue.component('x-input-service', XInputService)
-
-Vue.component('tenant-items-ecommerce-index', TenantItemsEcommerceIndex)
-Vue.component('tenant-ecommerce-cart', TenantEcommerceCart)
-Vue.component('tenant-tags-index', TenantTagsIndex)
-Vue.component('tenant-promotions-index', TenantPromotionsIndex)
-
-Vue.component('tenant-item-sets-index', TenantItemSetsIndex)
-Vue.component('tenant-person-types-index', TenantPersonTypesIndex)
-
-Vue.component('tenant-orders-index', TenantOrdersIndex)
-
-// Cuenta
-Vue.component('tenant-account-payment-index', TenantAccountPaymentIndex)
-Vue.component('tenant-account-configuration-index', TenantAccountConfigurationIndex)
-
-// Login
-Vue.component('tenant-login-page', TenantLoginPage)
-
-// Digemid
-Vue.component('tenant-digemid-index', TenantDigemidIndex)
-
-// Suscription
-Vue.component('tenant-suscription-client-index', TenantSuscriptionClientIndex)
-Vue.component('tenant-suscription-plans-index', TenantSuscriptionPlansIndex)
-Vue.component('tenant-suscription-payments-index', TenantSuscriptionPaymentsIndex)
-Vue.component('data-table-payment-receipt', DataTablePaymentReceipt)
-Vue.component('tenant-index-payment-receipt', TenantIndexPaymentReceipt)
-
-// Suscription extras
-Vue.component('tenant-suscription-grades-index', TenantSuscriptionGradesIndex)
-Vue.component('tenant-suscription-sections-index', TenantSuscriptionSectionsIndex)
-
-// Full Suscription
-Vue.component('tenant-full-suscription-client-index', TenantFullSuscriptionClientIndex)
-Vue.component('tenant-full-suscription-plans-index', TenantFullSuscriptionPlansIndex)
-Vue.component('tenant-full-suscription-payments-index', TenantFullSuscriptionPaymentsIndex)
-Vue.component('tenant-full-suscription-index-payment-receipt', TenantFullSuscriptionIndexPaymentReceipt)
-
-// Bank loans
-Vue.component('tenant-bankloans-index', TenantBankloansIndex)
-Vue.component('tenant-bankloans-form', TenantBankloansForm)
-
-// Producción
-Vue.component('tenant-mill-index', TenantMillIndex)
-Vue.component('tenant-mill-form', TenantMillForm)
-Vue.component('tenant-machine-index', TenantMachineIndex)
-Vue.component('tenant-machine-type-index', TenantMachineTypeIndex)
-Vue.component('tenant-machine-form', TenantMachineForm)
-Vue.component('tenant-machine-type-form', TenantMachineTypeForm)
-Vue.component('tenant-workers-index', TenantWorkersIndex)
-Vue.component('tenant-production-index', TenantProductionIndex)
-Vue.component('tenant-production-form', TenantProductionForm)
-Vue.component('tenant-packaging-index', TenantPackagingIndex)
-Vue.component('tenant-packaging-form', TenantPackagingForm)
-
-// Restaurante
-Vue.component('tenant-restaurant-list-items', TenantRestaurantListItems)
-Vue.component('tenant-restaurant-promotions-index', TenantRestaurantPromotionsIndex)
-Vue.component('tenant-restaurant-orders-index', TenantRestaurantOrdersIndex)
-Vue.component('tenant-restaurant-cash-index', TenantRestaurantCashIndex)
-Vue.component('tenant-restaurant-cash-filter-pos', TenantRestaurantCashFilterPos)
-Vue.component('tenant-restaurant-configuration', TenantRestaurantConfiguration)
-
-// Pagos
-Vue.component('tenant-payment-configurations-index', TenantPaymentConfigurationsIndex)
-Vue.component('tenant-public-payment-links-index', TenantPublicPaymentLinksIndex)
-Vue.component('tenant-payment-links-index', TenantPaymentLinksIndex)
-
-// Mobile App
-Vue.component('tenant-mobile-app-configuration', TenantMobileAppConfiguration)
-Vue.component('tenant-mobile-app-permissions', TenantMobileAppPermissions)
-
-// LevelAccess
-Vue.component('tenant-system-activity-logs-generals-index', TenantSystemActivityLogsGeneralsIndex)
-Vue.component('tenant-system-activity-logs-transactions-index', TenantSystemActivityLogsTransactionsIndex)
-Vue.component('tenant-remember-change-password', TenantRememberChangePassword)
-Vue.component('tenant-report-pending-account-commissions-index', TenantReportPendingAccountCommissionsIndex)
+/**
+ * Función para registrar todos los componentes tenant en la app de Vue 3
+ * @param {App} app - Instancia de la app de Vue 3
+ */
+export function registerTenantComponents(app) {
+  // Sire
+  app.component('tenant-sire-index', TenantSireIndex)
+  app.component('tenant-qr-chat', TenantQrChat)
+  app.component('tenant-qr-api', TenantQrApi)
+
+  // Registrations
+  app.component('tenant-item-aditional-info-selector', TenantItemAditionalInfoSelector)
+  app.component('tenant-item-aditional-info-modal', TenantItemAditionalInfoModal)
+
+  app.component('tenant-dashboard-index', TenantDashboardIndex)
+  app.component('tenant-dashboard-sales-by-product', TenantDashboardSalesByProduct)
+  app.component('x-graph', XGraph)
+  app.component('x-graph-line', XGraphLine)
+  app.component('tenant-signature-pse-index', TenantSignaturePseIndex)
+  app.component('tenant-whatsapp-api-index', TenantWhatsappApiIndex)
+  app.component('tenant-companies-form', TenantCompaniesForm)
+  app.component('tenant-companies-logo', TenantCompaniesLogo)
+  app.component('tenant-certificates-qztray', TenantCertificatesQztray)
+  app.component('tenant-certificates-index', TenantCertificatesIndex)
+  app.component('tenant-certificates-form', TenantCertificatesForm)
+  app.component('tenant-configurations-form', TenantConfigurationsForm)
+  app.component('tenant-configurations-form-purchases', TenantConfigurationsFormPurchases)
+  app.component('tenant-configurations-visual', TenantConfigurationsVisual)
+  app.component('tenant-configurations-pdf', TenantConfigurationsPdf)
+  app.component('tenant-configurations-ticket-pdf', TenantConfigurationsTicketPdf)
+  app.component('tenant-configurations-sale-notes', TenantConfigurationsSaleNotes)
+  app.component('tenant-configurations-pdf-guide', TenantConfigurationsPdfGuide)
+  app.component('tenant-configurations-preprinted-pdf', TenantConfigurationsPreprintedPdf)
+  app.component('tenant-dialog-header-menu', TenantDialogHeaderMenu)
+  app.component('tenant-bank_accounts-index', TenantBankAccountsIndex)
+  app.component('tenant-items-index', TenantItemsIndex)
+  app.component('tenant-persons-index', TenantPersonsIndex)
+  app.component('tenant-person-form', TenantPersonForm)
+  app.component('tenant-users-form', TenantUsersForm)
+  app.component('tenant-documents-index', TenantDocumentsIndex)
+  app.component('tenant-documents-invoice', TenantDocumentsInvoice)
+  app.component('tenant-documents-invoice-generate', TenantDocumentsInvoiceGenerate)
+  app.component('tenant-documents-invoicetensu', TenantDocumentsInvoicetensu)
+  app.component('tenant-documents-note', TenantDocumentsNote)
+  app.component('tenant-purchase-settlements-index', TenantPurchaseSettlementsIndex)
+  app.component('tenant-purchase-settlements-form', TenantPurchaseSettlementsForm)
+  app.component('tenant-documents-items-list', TenantDocumentsItemsList)
+  app.component('tenant-summaries-index', TenantSummariesIndex)
+  app.component('tenant-voided-index', TenantVoidedIndex)
+  app.component('tenant-search-index', TenantSearchIndex)
+  app.component('tenant-options-form', TenantOptionsForm)
+  app.component('tenant-options-form-item', TenantOptionsFormItem)
+  app.component('tenant-unit_types-index', TenantUnitTypesIndex)
+  app.component('tenant-detraction_types-index', TenantDetractionTypesIndex)
+  app.component('tenant-users-index', TenantUsersIndex)
+  app.component('tenant-establishments-index', TenantEstablishmentsIndex)
+  app.component('tenant-charge_discounts-index', TenantChargeDiscountsIndex)
+  app.component('tenant-banks-index', TenantBanksIndex)
+  app.component('tenant-exchange_rates-index', TenantExchangeRatesIndex)
+  app.component('tenant-currency-types-index', TenantCurrencyTypesIndex)
+  app.component('tenant-retentions-index', TenantRetentionsIndex)
+  app.component('tenant-retentions-form', TenantRetentionsForm)
+  app.component('tenant-perceptions-index', TenantPerceptionsIndex)
+  app.component('tenant-perceptions-form', TenantPerceptionsForm)
+  app.component('tenant-dispatches-index', TenantDispatchesIndex)
+  app.component('tenant-dispatches-form', TenantDispatchesForm)
+  app.component('tenant-dispatches-create', TenantDispatchesCreate)
+  app.component('tenant-guides-modal', TenantGuidesModal)
+  app.component('tenant-purchases-index', TenantPurchasesIndex)
+  app.component('tenant-purchases-form', TenantPurchasesForm)
+  app.component('tenant-purchases-edit', TenantPurchasesEdit)
+  app.component('tenant-transfer-reason-types-index', TenantTransferReasonTypesIndex)
+  app.component('tenant-dispatch_carrier-index', TenantDispatchCarrierIndex)
+  app.component('tenant-dispatch_carrier-form', TenantDispatchCarrierForm)
+  app.component('tenant-purchases-items', TenantPurchasesItems)
+  app.component('tenant-attribute_types-index', TenantAttributeTypesIndex)
+  app.component('tenant-calendar', TenantCalendar)
+  app.component('tenant-warehouses', TenantWarehouses)
+  app.component('tenant-calendar-quotation', TenantCalendarQuotation)
+  app.component('tenant-product', TenantProduct)
+  app.component('tenant-tasks-lists', TenantTasksLists)
+  app.component('tenant-tasks-form', TenantTasksForm)
+  app.component('tenant-reports-consistency-documents-lists', TenantReportsConsistencyDocumentsLists)
+  app.component('tenant-contingencies-index', TenantContingenciesIndex)
+  app.component('tenant-quotations-index', TenantQuotationsIndex)
+  app.component('tenant-quotations-form', TenantQuotationsForm)
+  app.component('tenant-quotations-edit', TenantQuotationsEdit)
+  app.component('tenant-quotations-item-form', TenantQuotationsItemForm)
+  app.component('tenant-sale-notes-index', TenantSaleNotesIndex)
+  app.component('tenant-sale-notes-form', TenantSaleNotesForm)
+  app.component('tenant-pos-index', TenantPosIndex)
+  app.component('cash-index', CashIndex)
+  app.component('tenant-card-brands-index', TenantCardBrandsIndex)
+  app.component('tenant-pos-fast', TenantPosFast)
+  app.component('tenant-pos-garage', TenantPosGarage)
+  app.component('tenant-payment-method-index', TenantPaymentMethodIndex)
+  app.component('inventory-index', InventoryIndex)
+  app.component('inventory-transfers-index', InventoryTransfersIndex)
+  app.component('warehouses-index', WarehousesIndex)
+  app.component('tenant-report-kardex-index', TenantReportKardexIndex)
+  app.component('tenant-inventories-form', TenantInventoriesForm)
+  app.component('tenant-expenses-index', TenantExpensesIndex)
+  app.component('tenant-expenses-form', TenantExpensesForm)
+  app.component('tenant-account-export', TenantAccountExport)
+  app.component('tenant-account-summary-report', TenantAccountSummaryReport)
+  app.component('tenant-account-format', TenantAccountFormat)
+  app.component('tenant-company-accounts', TenantCompanyAccounts)
+  app.component('tenant-ledger-accounts', TenantLedgerAccounts)
+  app.component('inventory-review-index', InventoryReviewIndex)
+  app.component('tenant-inventory-report', TenantInventoryReport)
+  app.component('tenant-inventory-color-index', TenantInventoryColorIndex)
+  app.component('tenant-inventory-item-units-per-package-index', TenantInventoryItemUnitsPerPackageIndex)
+  app.component('tenant-inventory-item-units-business', TenantInventoryItemUnitsBusiness)
+  app.component('tenant-inventory-item-package-measurements', TenantInventoryItemPackageMeasurements)
+  app.component('tenant-inventory-mold-cavities', TenantInventoryMoldCavities)
+  app.component('tenant-inventory-mold-property', TenantInventoryMoldProperty)
+  app.component('tenant-inventory-size-property', TenantInventorySizeProperty)
+  app.component('tenant-inventory-item-status', TenantInventoryItemStatus)
+  app.component('tenant-inventory-item-product-family', TenantInventoryItemProductFamily)
+  app.component('tenant-inventory-extra-info-list', TenantInventoryExtraInfoList)
+  app.component('tenant-inventory-devolutions-index', TenantInventoryDevolutionsIndex)
+  app.component('tenant-inventory-devolutions-form', TenantInventoryDevolutionsForm)
+  app.component('tenant-documents-not-sent', TenantDocumentsNotSent)
+  app.component('tenant-report-purchases-index', TenantReportPurchasesIndex)
+  app.component('tenant-report-documents-index', TenantReportDocumentsIndex)
+  app.component('tenant-state-account-index', TenantStateAccountIndex)
+  app.component('tenant-report-customers-index', TenantReportCustomersIndex)
+  app.component('tenant-report-items-index', TenantReportItemsIndex)
+  app.component('tenant-report-items-extra-index', TenantReportItemsExtraIndex)
+  app.component('tenant-report-download-tray-index', TenantReportDownloadTrayIndex)
+  app.component('tenant-report-guide-index', TenantReportGuideIndex)
+  app.component('tenant-report-sale_notes-index', TenantReportSaleNotesIndex)
+  app.component('tenant-report-quotations-index', TenantReportQuotationsIndex)
+  app.component('tenant-report-cash-index', TenantReportCashIndex)
+  app.component('tenant-index-configuration', TenantIndexConfiguration)
+  app.component('tenant-report-document_hotels-index', TenantReportDocumentHotelsIndex)
+  app.component('tenant-report_hotels-index', TenantReportHotelsIndex)
+  app.component('tenant-report-commercial_analysis-index', TenantReportCommercialAnalysisIndex)
+  app.component('tenant-offline-configurations-index', TenantOfflineConfigurationsIndex)
+  app.component('tenant-series-configurations-index', TenantSeriesConfigurationsIndex)
+  app.component('tenant-validate-documents-index', TenantValidateDocumentsIndex)
+  app.component('tenant-report-document-detractions-index', TenantReportDocumentDetractionsIndex)
+  app.component('tenant-report-commissions-index', TenantReportCommissionsIndex)
+  app.component('tenant-report-order-notes-consolidated-index', TenantReportOrderNotesConsolidatedIndex)
+  app.component('tenant-report-general-items-index', TenantReportGeneralItemsIndex)
+  app.component('tenant-report-order-notes-general-index', TenantReportOrderNotesGeneralIndex)
+  app.component('tenant-report-sales-consolidated-index', TenantReportSalesConsolidatedIndex)
+  app.component('tenant-report-user-commissions-index', TenantReportUserCommissionsIndex)
+  app.component('tenant-report-fixed-asset-purchases-index', TenantReportFixedAssetPurchasesIndex)
+  app.component('tenant-report-massive-downloads-index', TenantReportMassiveDownloadsIndex)
+  app.component('tenant-documents-regularize-shipping', TenantDocumentsRegularizeShipping)
+  app.component('tenant-report-commissions-detail-index', TenantReportCommissionsDetailIndex)
+  app.component('tenant-report-tips-index', TenantReportTipsIndex)
+  app.component('tenant-categories-index', TenantCategoriesIndex)
+  app.component('tenant-brands-index', TenantBrandsIndex)
+  app.component('tenant-zone-index', TenantZoneIndex)
+  app.component('tenant-incentives-index', TenantIncentivesIndex)
+  app.component('tenant-item-lots-index', TenantItemLotsIndex)
+  app.component('tenant-ecommerce-configuration-info', TenantEcommerceConfigurationInfo)
+  app.component('tenant-ecommerce-configuration-culqi', TenantEcommerceConfigurationCulqi)
+  app.component('tenant-ecommerce-configuration-paypal', TenantEcommerceConfigurationPaypal)
+  app.component('tenant-ecommerce-configuration-logo', TenantEcommerceConfigurationLogo)
+  app.component('tenant-ecommerce-configuration-social', TenantEcommerceConfigurationSocial)
+  app.component('tenant-ecommerce-configuration-tag', TenantEcommerceConfigurationTag)
+  app.component('tenant-ecommerce-item-sets-index', TenantEcommerceItemSetsIndex)
+  app.component('tenant-ecommerce-configuration-links', TenantEcommerceConfigurationLinks)
+  app.component('tenant-purchase-quotations-index', TenantPurchaseQuotationsIndex)
+  app.component('tenant-purchase-quotations-form', TenantPurchaseQuotationsForm)
+  app.component('tenant-purchase-orders-index', TenantPurchaseOrdersIndex)
+  app.component('tenant-purchase-orders-form', TenantPurchaseOrdersForm)
+  app.component('tenant-purchase-orders-generate', TenantPurchaseOrdersGenerate)
+  app.component('moves-index', MovesIndex)
+  app.component('inventory-form-masive', InventoryFormMasive)
+  app.component('tenant-report-kardex-master', TenantReportKardexMaster)
+  app.component('tenant-report-kardex-lots', TenantReportKardexLots)
+  app.component('tenant-report-kardex-series', TenantReportKardexSeries)
+  app.component('tenant-order-notes-index', TenantOrderNotesIndex)
+  app.component('tenant-order-notes-form', TenantOrderNotesForm)
+  app.component('tenant-order-notes-edit', TenantOrderNotesEdit)
+  app.component('tenant-report-valued-kardex', TenantReportValuedKardex)
+  app.component('tenant-mitiendape-config', TenantMitiendapeConfig)
+  // Finance
+  app.component('tenant-finance-global-payments-index', TenantFinanceGlobalPaymentsIndex)
+  app.component('tenant-finance-balance-index', TenantFinanceBalanceIndex)
+  app.component('tenant-finance-modal-transfer-between-accounts', TenantFinanceModalTransferBetweenAccounts)
+  app.component('tenant-finance-payment-method-types-index', TenantFinancePaymentMethodTypesIndex)
+  app.component('tenant-finance-unpaid-index', TenantFinanceUnpaidIndex)
+  app.component('tenant-finance-to-pay-index', TenantFinanceToPayIndex)
+  app.component('tenant-finance-income-index', TenantFinanceIncomeIndex)
+  app.component('tenant-finance-income-form', TenantFinanceIncomeForm)
+  app.component('tenant-income-types-index', TenantIncomeTypesIndex)
+  app.component('tenant-income-reasons-index', TenantIncomeReasonsIndex)
+  app.component('tenant-finance-movements-index', TenantFinanceMovementsIndex)
+  // Sale
+  app.component('tenant-sale-opportunities-index', TenantSaleOpportunitiesIndex)
+  app.component('tenant-sale-opportunities-form', TenantSaleOpportunitiesForm)
+  app.component('tenant-payment-method-types-index', TenantPaymentMethodTypesIndex)
+  app.component('tenant-contracts-index', TenantContractsIndex)
+  app.component('tenant-contracts-form', TenantContractsForm)
+  app.component('tenant-production-orders-index', TenantProductionOrdersIndex)
+  app.component('tenant-agents-index', TenantAgentsIndex)
+  // Item
+  app.component('tenant-web-platforms-index', TenantWebPlatformsIndex)
+  app.component('tenant-item-detail-index', TenantItemDetailIndex)
+  // Technical Services
+  app.component('tenant-technical-services-index', TenantTechnicalServicesIndex)
+  app.component('tenant-user-commissions-index', TenantUserCommissionsIndex)
+  app.component('tenant-pending-account-commissions-index', TenantPendingAccountCommissionsIndex)
+  // Purchase
+  app.component('tenant-fixed-asset-items-index', TenantFixedAssetItemsIndex)
+  app.component('tenant-fixed-asset-purchases-index', TenantFixedAssetPurchasesIndex)
+  app.component('tenant-fixed-asset-purchases-form', TenantFixedAssetPurchasesForm)
+  // Expense
+  app.component('tenant-expense-types-index', TenantExpenseTypesIndex)
+  app.component('tenant-expense-reasons-index', TenantExpenseReasonsIndex)
+  app.component('tenant-expense-method-types-index', TenantExpenseMethodTypesIndex)
+  app.component('tenant-drivers-index', TenantDriversIndex)
+  app.component('tenant-dispatchers-index', TenantDispatchersIndex)
+  app.component('tenant-transports-index', TenantTransportsIndex)
+  app.component('tenant-origin_addresses-index', TenantOriginAddressesIndex)
+  app.component('tenant-dispatch-addresses-index', TenantDispatchAddressesIndex)
+  app.component('tenant-order-forms-index', TenantOrderFormsIndex)
+  app.component('tenant-order-forms-form', TenantOrderFormsForm)
+  app.component('tenant-multi-users-change-client', TenantMultiUsersChangeClient)
+  // Hoteles
+  app.component('tenant-hotel-rates', TenantHotelRates)
+  app.component('tenant-hotel-categories', TenantHotelCategories)
+  app.component('tenant-hotel-floors', TenantHotelFloors)
+  app.component('tenant-hotel-rooms', TenantHotelRooms)
+  app.component('tenant-hotel-reception', TenantHotelReception)
+  app.component('tenant-hotel-sucursale', TenantHotelSucursale)
+  app.component('tenant-hotel-rent', TenantHotelRent)
+  app.component('tenant-hotel-rent-add-product', TenantHotelRentAddProduct)
+  app.component('tenant-hotel-rent-checkout', TenantHotelRentCheckout)
+  // Trámite documentario
+  app.component('tenant-documentary-offices', TenantDocumentaryOffices)
+  app.component('tenant-documentary-status', TenantDocumentaryStatus)
+  app.component('tenant-documentary-processes', TenantDocumentaryProcesses)
+  app.component('tenant-documentary-documents', TenantDocumentaryDocuments)
+  app.component('tenant-documentary-actions', TenantDocumentaryActions)
+  app.component('tenant-documentary-files', TenantDocumentaryFiles)
+  app.component('tenant-documentary-requirements', TenantDocumentaryRequirements)
+  app.component('tenant-documentary-statistic', TenantDocumentaryStatistic)
+  // Trámite documentario Simplificado
+  app.component('tenant-documentary-files-simplify', TenantDocumentaryFilesSimplify)
+  app.component('tenant-documentary-files-simplify-form', TenantDocumentaryFilesSimplifyForm)
+  // apiperu input
+  app.component('x-input-service', XInputService)
+  app.component('tenant-items-ecommerce-index', TenantItemsEcommerceIndex)
+  app.component('tenant-ecommerce-cart', TenantEcommerceCart)
+  app.component('tenant-tags-index', TenantTagsIndex)
+  app.component('tenant-promotions-index', TenantPromotionsIndex)
+  app.component('tenant-item-sets-index', TenantItemSetsIndex)
+  app.component('tenant-person-types-index', TenantPersonTypesIndex)
+  app.component('tenant-orders-index', TenantOrdersIndex)
+  // Cuenta
+  app.component('tenant-account-payment-index', TenantAccountPaymentIndex)
+  app.component('tenant-account-configuration-index', TenantAccountConfigurationIndex)
+  // Login
+  app.component('tenant-login-page', TenantLoginPage)
+  // Digemid
+  app.component('tenant-digemid-index', TenantDigemidIndex)
+  // Suscription
+  app.component('tenant-suscription-client-index', TenantSuscriptionClientIndex)
+  app.component('tenant-suscription-plans-index', TenantSuscriptionPlansIndex)
+  app.component('tenant-suscription-payments-index', TenantSuscriptionPaymentsIndex)
+  app.component('data-table-payment-receipt', DataTablePaymentReceipt)
+  app.component('tenant-index-payment-receipt', TenantIndexPaymentReceipt)
+  // Suscription extras
+  app.component('tenant-suscription-grades-index', TenantSuscriptionGradesIndex)
+  app.component('tenant-suscription-sections-index', TenantSuscriptionSectionsIndex)
+  // Full Suscription
+  app.component('tenant-full-suscription-client-index', TenantFullSuscriptionClientIndex)
+  app.component('tenant-full-suscription-plans-index', TenantFullSuscriptionPlansIndex)
+  app.component('tenant-full-suscription-payments-index', TenantFullSuscriptionPaymentsIndex)
+  app.component('tenant-full-suscription-index-payment-receipt', TenantFullSuscriptionIndexPaymentReceipt)
+  // Bank loans
+  app.component('tenant-bankloans-index', TenantBankloansIndex)
+  app.component('tenant-bankloans-form', TenantBankloansForm)
+  // Producción
+  app.component('tenant-mill-index', TenantMillIndex)
+  app.component('tenant-mill-form', TenantMillForm)
+  app.component('tenant-machine-index', TenantMachineIndex)
+  app.component('tenant-machine-type-index', TenantMachineTypeIndex)
+  app.component('tenant-machine-form', TenantMachineForm)
+  app.component('tenant-machine-type-form', TenantMachineTypeForm)
+  app.component('tenant-workers-index', TenantWorkersIndex)
+  app.component('tenant-production-index', TenantProductionIndex)
+  app.component('tenant-production-form', TenantProductionForm)
+  app.component('tenant-packaging-index', TenantPackagingIndex)
+  app.component('tenant-packaging-form', TenantPackagingForm)
+  // Restaurante
+  app.component('tenant-restaurant-list-items', TenantRestaurantListItems)
+  app.component('tenant-restaurant-promotions-index', TenantRestaurantPromotionsIndex)
+  app.component('tenant-restaurant-orders-index', TenantRestaurantOrdersIndex)
+  app.component('tenant-restaurant-cash-index', TenantRestaurantCashIndex)
+  app.component('tenant-restaurant-cash-filter-pos', TenantRestaurantCashFilterPos)
+  app.component('tenant-restaurant-configuration', TenantRestaurantConfiguration)
+  // Pagos
+  app.component('tenant-payment-configurations-index', TenantPaymentConfigurationsIndex)
+  app.component('tenant-public-payment-links-index', TenantPublicPaymentLinksIndex)
+  app.component('tenant-payment-links-index', TenantPaymentLinksIndex)
+  // Mobile App
+  app.component('tenant-mobile-app-configuration', TenantMobileAppConfiguration)
+  app.component('tenant-mobile-app-permissions', TenantMobileAppPermissions)
+  // LevelAccess
+  app.component('tenant-system-activity-logs-generals-index', TenantSystemActivityLogsGeneralsIndex)
+  app.component('tenant-system-activity-logs-transactions-index', TenantSystemActivityLogsTransactionsIndex)
+  app.component('tenant-remember-change-password', TenantRememberChangePassword)
+  app.component('tenant-report-pending-account-commissions-index', TenantReportPendingAccountCommissionsIndex)
+}

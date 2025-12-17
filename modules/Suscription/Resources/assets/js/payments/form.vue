@@ -287,25 +287,27 @@
                         <div class="table-responsive">
                             <table class="table table-responsive-xl ">
                                 <thead class="">
-                                <th>#</th>
-                                <th class="text-center">Fecha Emisión</th>
-                                <!--                                <th>Cliente</th>-->
-                                <!--                                <th>Hijo</th>-->
-                                <!--                                <th>Grado</th>-->
-                                <!--                                <th>Sección</th>-->
-                                <th>Recibo de pago</th>
-                                <th>Estado</th>
-                                <th class="text-center">Moneda</th>
-                                <th
-                                    class="text-end">F. Vencimiento
-                                </th>
-                                <th class="text-end">Total</th>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="text-center">Fecha Emisión</th>
+                                    <!--                                <th>Cliente</th>-->
+                                    <!--                                <th>Hijo</th>-->
+                                    <!--                                <th>Grado</th>-->
+                                    <!--                                <th>Sección</th>-->
+                                    <th>Recibo de pago</th>
+                                    <th>Estado</th>
+                                    <th class="text-center">Moneda</th>
+                                    <th
+                                        class="text-end">F. Vencimiento
+                                    </th>
+                                    <th class="text-end">Total</th>
 
 
-                                <th class="text-center">Comprobantes</th>
-                                <th class="text-center">Estado pago</th>
-                                <!--                                <th class="text-center">Pagos</th>-->
-                                <th class="text-center">Descarga</th>
+                                    <th class="text-center">Comprobantes</th>
+                                    <th class="text-center">Estado pago</th>
+                                    <!--                                <th class="text-center">Pagos</th>-->
+                                    <th class="text-center">Descarga</th>
+                                </tr>
                                 </thead>
 
                                 <tbody>
@@ -348,9 +350,8 @@
 
                                     <!--Comprobantes -->
                                     <td>
-                                        <template v-for="(document,i) in row.documents">
-                                            <label :key="i"
-                                                   class="d-block"
+                                        <template v-for="(document,i) in row.documents" :key="i">
+                                            <label class="d-block"
                                                    v-text="document.number_full">
                                             </label>
                                         </template>
@@ -398,20 +399,21 @@
                     <div class="form-body">
                         <table class="table table-responsive-xl ">
                             <thead class="">
-
-                            <th>#</th>
-                            <!-- date_of_issue -->
-                            <th class="text-center"
-                                style="min-width: 95px;">Emisión
-                            </th>
-                            <th>Cliente</th>
-                            <th>Número</th>
-                            <th>Estado</th>
-                            <th class="text-center">Moneda</th>
-                            <th class="text-end">T.Igv</th>
-                            <th class="text-end">Total</th>
-                            <th class="text-center">Saldo</th>
-                            <th class="text-center"></th>
+                            <tr>
+                                <th>#</th>
+                                <!-- date_of_issue -->
+                                <th class="text-center"
+                                    style="min-width: 95px;">Emisión
+                                </th>
+                                <th>Cliente</th>
+                                <th>Número</th>
+                                <th>Estado</th>
+                                <th class="text-center">Moneda</th>
+                                <th class="text-end">T.Igv</th>
+                                <th class="text-end">Total</th>
+                                <th class="text-center">Saldo</th>
+                                <th class="text-center"></th>
+                            </tr>
                             </thead>
 
                             <tbody>

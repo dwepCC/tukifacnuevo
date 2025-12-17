@@ -13,7 +13,10 @@
 </style>
 
 <script>
-import Chart from 'chart.js';
+import { Chart, registerables } from 'chart.js';
+
+// Registrar componentes de Chart.js
+Chart.register(...registerables);
 
 export default {
     props: ['allData'],
@@ -25,24 +28,26 @@ export default {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                legend: {
-                    display: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
                 },
                 scales: {
-                    xAxes: [{
-                    gridLines: {
-                        display: false
-                    }
-                    }],
-                    yAxes: [{
-                    gridLines: {
-                        display: false
+                    x: {
+                        grid: {
+                            display: false
+                        }
                     },
-                    ticks: {
-                        count: 6,
-                        autoSkip: false
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            stepSize: undefined,
+                            autoSkip: false
+                        }
                     }
-                    }]
                 }
             }
         }

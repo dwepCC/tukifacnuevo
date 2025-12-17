@@ -14,9 +14,9 @@
         
                 <div class="pricing-table row no-gutters mt-3 mb-3 d-flex justify-content-center">
 					
-                    <template v-for="(row, index) in records">
+                    <template v-for="(row, index) in records" :key="index">
 
-                        <div  class="col-lg-3 col-sm-6 text-center pb-4" style="padding:10px;" :key="index">
+                        <div  class="col-lg-3 col-sm-6 text-center pb-4" style="padding:10px;">
 							<div class="plan most-popular h-100 d-flex flex-column">
                                 <div class="d-flex align-items-center">
                                     <h3 class="text-start fw-semibold">{{row.name}}</h3>

@@ -13,7 +13,10 @@
 </style>
 
 <script>
-    import Chart from 'chart.js';
+    import { Chart, registerables } from 'chart.js';
+    
+    // Registrar componentes de Chart.js
+    Chart.register(...registerables);
 
     export default {
         props: ["data"],

@@ -64,7 +64,7 @@
                                     <th>Datos de referencia</th>
                                 </template>
     
-                            <tr>
+                            </tr>
                             <tr slot-scope="{ index, row }">
                                 <td>{{ index }}</td>
                                 <td>{{row.date_of_issue}}</td>
@@ -77,16 +77,18 @@
                                 </td>
                                 <td>{{row.state_type_description}}</td>
                                 <td>{{row.currency_type_id}}</td>
-                            <td  v-if="columns.web_platforms.visible">
-                                <template v-for="(platform,i) in row.web_platforms" v-if="row.web_platforms !== undefined">
-                                    <label class="d-block"  :key="i">{{platform.name}}</label>
-                                </template>
-                            </td>
+                              <td  v-if="columns.web_platforms.visible">
+                                  <template v-if="row.web_platforms !== undefined">
+                                      <template v-for="(platform,i) in row.web_platforms" :key="i">
+                                          <label class="d-block">{{platform.name}}</label>
+                                      </template>
+                                  </template>
+                              </td>
                             <td>{{ row.purchase_order }}</td>
                             <td v-if="columns.region.visible">{{row.customer_region}}</td>
                             <td>
-                                    <template v-for="(doc,i) in row.documents">
-                                        <label class="d-block"  :key="i">{{doc.number_full}}</label>
+                                    <template v-for="(doc,i) in row.documents" :key="i">
+                                        <label class="d-block">{{doc.number_full}}</label>
                                     </template>
                                 </td>
                             <td>{{row.quotation_number_full}}</td>

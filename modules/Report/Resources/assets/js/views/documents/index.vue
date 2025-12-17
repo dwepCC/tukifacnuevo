@@ -273,13 +273,12 @@
                             </td>
 
                             <td v-if="columns.web_platforms.visible">
-                                <template
-                                    v-for="(platform, i) in row.web_platforms"
-                                    v-if="row.web_platforms !== undefined"
-                                >
-                                    <label class="d-block" :key="i">{{
-                                        platform.name
-                                    }}</label>
+                                <template v-if="row.web_platforms !== undefined">
+                                    <template v-for="(platform, i) in row.web_platforms" :key="i">
+                                        <label class="d-block">{{
+                                            platform.name
+                                        }}</label>
+                                    </template>
                                 </template>
                             </td>
 

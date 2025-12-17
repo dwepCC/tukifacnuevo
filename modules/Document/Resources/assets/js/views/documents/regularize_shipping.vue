@@ -21,7 +21,7 @@
                         <th>Descripción</th>
                         <th class="text-center">Consultar CDR</th>
                         <th class="text-center">Enviar</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <!-- <td>{{ index }}</td> -->
                         <td>{{ row.soap_type_description }}</td>

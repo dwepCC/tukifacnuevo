@@ -43,7 +43,7 @@
                         <!-- <th v-if="columns.total_perception.visible" >Percepcion</th> -->
                         <th class="text-end">Total</th>
                         <th class="text-end">Acciones</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <!-- <td>{{ index }}</td> -->
                         <td class="text-start">{{ row.date_of_issue }}</td>

@@ -232,9 +232,8 @@
                         </td>
                         <!--Comprobantes -->
                         <td>
-                            <template v-for="(document, i) in row.documents">
+                            <template v-for="(document, i) in row.documents" :key="i">
                                 <label
-                                    :key="i"
                                     class="d-block"
                                     v-text="document.number_full"
                                 >
@@ -360,9 +359,8 @@
                                         content="Generar guía desde CPE"
                                         effect="dark"
                                         placement="top-start">
-                                <template v-for="(document,i) in row.documents">
+                                <template v-for="(document,i) in row.documents" :key="i">
                                     <a v-if="row.changed"
-                                       :key="i"
                                        :href="`/dispatches/create/${document.id}`"
                                        class="btn waves-effect waves-light btn-xs btn-warning m-1__2">
                                         <i class="fas fa-file-alt">

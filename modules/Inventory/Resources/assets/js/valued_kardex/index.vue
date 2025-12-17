@@ -30,7 +30,7 @@
                         <th class="text-center">Costo ponderado</th>
                         <th>Stock</th>
                         <th class="text-center">Exportar</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <!-- <td>{{ index }}</td> -->
                         <td>{{ row.item_description }}</td>

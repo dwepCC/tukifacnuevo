@@ -274,6 +274,7 @@
                             >
                                 <td>
                                     {{ index + 1 }}
+                                </td>
                                 <td>
                                     {{ archive.public_name }}
                                 </td>

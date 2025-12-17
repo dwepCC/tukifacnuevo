@@ -515,7 +515,7 @@ export default {
             return obj;
         },
         demo() {
-            parseXMLToJSON();
+            // parseXMLToJSON eliminado - no se necesita
             return false;
         }
     },

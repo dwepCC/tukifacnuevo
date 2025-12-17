@@ -102,8 +102,6 @@
 
                 </div>
             </div>
-            </div>
-
 
             <div class="col-md-12 position-relative card-table-container-quotation">
                 <div class="scroll-shadow shadow-left" v-show="showLeftShadow"></div>
@@ -122,7 +120,7 @@
                                 @current-change="getRecords"
                                 layout="total, prev, pager, next"
                                 :total="pagination.total"
-                                :current-page.sync="pagination.current_page"
+                                v-model:current-page="pagination.current_page"
                                 :page-size="pagination.per_page">
                         </el-pagination>
                     </div>

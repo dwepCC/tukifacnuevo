@@ -43,7 +43,7 @@
                         <th class="text-center">Moneda</th>
                         <th class="text-end">Total</th>
                         <th class="text-center">Dist. Prestamo Bancario</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }"
                         :class="setClassToTable(row)">
                         <!-- <td>{{ index }}</td> -->

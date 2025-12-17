@@ -44,7 +44,7 @@
                         <th class="text-end">Total</th>
                         <!-- <th class="text-center">PDF</th> -->
                         <th class="text-end">Acciones</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }" :class="{ anulate_color : row.state_type_id == '11' }">
                         <!-- <td>{{ index }}</td> -->
                         <td class="text-star">{{ row.date_of_issue }}</td>

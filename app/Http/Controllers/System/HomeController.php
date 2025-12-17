@@ -5,6 +5,7 @@ namespace App\Http\Controllers\System;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\System\Client;
+use Inertia\Inertia;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -41,11 +42,14 @@ class HomeController extends Controller
         // $res_tag = $tag->getOutput();
         // $version = $res_tag.' - '.$res_id;
 
-        return view('system.dashboard')->with('clients', count($clients))
-                ->with('delete_permission', $delete_permission)
-                ->with('disc_used', $disc_used)
-                ->with('i_used', $i_used)
-                ->with('storage_size', $storage_size)
-                ->with('version', $version);
+        // Usar Inertia para renderizar el dashboard
+        return Inertia::render('System/Dashboard', [
+            'clients' => count($clients),
+            'delete_permission' => $delete_permission,
+            'disc_used' => $disc_used,
+            'i_used' => $i_used,
+            'storage_size' => $storage_size,
+            'version' => $version,
+        ]);
     }
 }

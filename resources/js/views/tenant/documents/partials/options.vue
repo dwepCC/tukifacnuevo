@@ -223,7 +223,7 @@
 </template>
 
 <script>
-import {mapState, mapActions} from "vuex/dist/vuex.mjs";
+import {mapState, mapActions} from "@/stores/vuex-adapter";
 import Keypress from "vue-keypress";
 import QrApi from '@viewsModuleQrApi/QrApiTemplate.vue'
 import QrChatWsapp from '@viewsModuleQrChatBuho/ButtonSend.vue'

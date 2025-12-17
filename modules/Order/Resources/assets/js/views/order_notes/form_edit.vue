@@ -178,7 +178,6 @@
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </td>
-                                            <br>
                                         </tr>
                                     </tbody>
                                 </table>

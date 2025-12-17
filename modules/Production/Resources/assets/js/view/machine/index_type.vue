@@ -28,7 +28,7 @@
                         <th>Descripcion</th>
                         <th>Activo</th>
                         <th></th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <!-- <td>{{ index }}</td> -->
                         <td>{{ row.name }}</td>

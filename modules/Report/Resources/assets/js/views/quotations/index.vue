@@ -67,16 +67,16 @@
                             <td>{{ row.customer_name }}</td>
                             <td>{{ row.state_type_description }}</td>
                             <td>{{ row.identifier }}</td>
-                            <td>
-                                <template v-for="(doc, i) in row.documents">
-                                    <label class="d-block" :key="i">{{
-                                        doc.number_full
-                                    }}</label>
+                              <td>
+                                  <template v-for="(doc, i) in row.documents" :key="i">
+                                      <label class="d-block">{{
+                                          doc.number_full
+                                      }}</label>
                                 </template>
                             </td>
                             <td>
-                                <template v-for="(s_note, i) in row.sale_notes">
-                                    <label class="d-block" :key="i">{{
+                                <template v-for="(s_note, i) in row.sale_notes" :key="i">
+                                    <label class="d-block">{{
                                         s_note.identifier
                                     }}</label>
                                 </template>

@@ -37,7 +37,7 @@
                         <th>Modelo</th>
                         <th>Fuerza de cierre</th>
                         <th></th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <!-- <td>{{ index }}</td> -->
                         <td>{{ row.name }}</td>

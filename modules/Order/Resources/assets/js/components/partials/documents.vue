@@ -34,7 +34,7 @@
                                     </td>
                                     <td class="text-center">{{ row.date_of_issue }}</td>
                                     <td>{{ row.customer_name }}<br/><small v-text="row.customer_number"></small></td>
-                                    <td>{{ row.identifier }}
+                                    <td>{{ row.identifier }}</td>
                                     <td class="text-right">{{ row.total }}</td>
                                     <td>
                                         <el-select v-model="row.document_type_id" @change="changeDocumentType(row, index)">

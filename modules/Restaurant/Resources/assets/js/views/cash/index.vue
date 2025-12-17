@@ -33,7 +33,7 @@
                         <!-- <th>Egreso</th> -->
                         <th>Estado</th>
                         <th class="text-center">Acciones</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <td>{{ index }}</td>
                         <td>{{ row.user }}</td>

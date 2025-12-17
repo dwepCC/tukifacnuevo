@@ -32,11 +32,11 @@
             >
                 <td>
                     {{ index + 1 }}
-                    <!--                                        </td>
-                                                            <td>
-                                                                {{ archive.observation }}
+                </td>
+                <!--                                        <td>
+                                                            {{ archive.observation }}
 
-                                                            </td>-->
+                                                        </td>-->
                 <td>
                     {{ archive.public_name }}
                 </td>

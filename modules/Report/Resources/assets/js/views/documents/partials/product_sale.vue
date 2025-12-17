@@ -6,8 +6,10 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-                                    <th class="">Product</th>
-                                    <th class="">Cantidad</th>
+                                    <tr>
+                                        <th class="">Product</th>
+                                        <th class="">Cantidad</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in records" :key="item.key">

@@ -40,7 +40,7 @@
                          <th  >Procedencia</th>
                          <th>Comprobante</th>-->
 
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <td>{{ index }}</td>
                         <td>{{ row.customer.description }}</td>

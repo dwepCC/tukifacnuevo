@@ -188,20 +188,18 @@
                         </td>
                         <td>{{ row.identifier }}</td>
                         <td>
-                            <template v-for="(document, i) in row.documents">
-                                <label
-                                    :key="i"
-                                    v-text="showAnulateDoc(document)"
-                                    class="d-block"
+                              <template v-for="(document, i) in row.documents" :key="i">
+                                  <label
+                                      v-text="showAnulateDoc(document)"
+                                      class="d-block"
                                 ></label>
                             </template>
                         </td>
                         <td v-if="columns.sale_notes.visible">
-                            <template v-for="(sale_note, i) in row.sale_notes">
-                                <label
-                                    :key="i"
-                                    v-text="sale_note.number_full"
-                                    class="d-block"
+                              <template v-for="(sale_note, i) in row.sale_notes" :key="i">
+                                  <label
+                                      v-text="sale_note.number_full"
+                                      class="d-block"
                                 ></label>
                             </template>
                         </td>
@@ -221,11 +219,10 @@
                         </td>
                         <td v-if="columns.dispatches.visible">
                             <!-- Pedidos -->
-                            <template v-for="(dispach, i) in row.dispatches">
-                                <label
-                                    :key="i"
-                                    v-text="dispach.number"
-                                    class="d-block"
+                              <template v-for="(dispach, i) in row.dispatches" :key="i">
+                                  <label
+                                      v-text="dispach.number"
+                                      class="d-block"
                                 ></label>
                             </template>
                         </td>

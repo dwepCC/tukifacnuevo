@@ -40,8 +40,9 @@
     <link rel="stylesheet" href="{{asset('porto-light/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
 
     <!-- Specific Page Vendor CSS -->
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.css')}}" />
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.theme.css')}}" />
+    {{-- jQuery UI eliminado - usando Tailwind CSS --}}
+    {{-- <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.css')}}" /> --}}
+    {{-- <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-ui/jquery-ui.theme.css')}}" /> --}}
     <link rel="stylesheet" href="{{asset('porto-light/vendor/select2/css/select2.css')}}" />
     <link rel="stylesheet" href="{{asset('porto-light/vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}" />
 
@@ -51,7 +52,8 @@
 
     <link rel="stylesheet" href="{{asset('porto-light/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />
 
-    <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.css')}}" />
+    {{-- jQuery Loading eliminado - usar alternativas modernas --}}
+    {{-- <link rel="stylesheet" href="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.css')}}" /> --}}
 
     <link rel="stylesheet" href="{{ asset('porto-light/css/theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('porto-light/css/custom.css') }}" />
@@ -63,7 +65,8 @@
     @stack('styles')
 
 
-    <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script>
+    {{-- Modernizr eliminado - no necesario en navegadores modernos --}}
+    {{-- <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script> --}}
 
     <style>
 
@@ -102,11 +105,13 @@
     <script src="{{ asset('porto-light/vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
 
     {{-- Specific Page Vendor --}}
-    <script src="{{asset('porto-light/vendor/jquery-ui/jquery-ui.js')}}"></script>
-    <script src="{{asset('porto-light/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js')}}"></script>
+    {{-- jQuery UI eliminado - usar alternativas modernas --}}
+    {{-- <script src="{{asset('porto-light/vendor/jquery-ui/jquery-ui.js')}}"></script> --}}
+    {{-- <script src="{{asset('porto-light/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js')}}"></script> --}}
     <!--<script src="{{asset('porto-light/vendor/select2/js/select2.js')}}"></script>-->
 
-    <script src="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.js')}}"></script>
+    {{-- jQuery Loading eliminado - usar alternativas modernas --}}
+    {{-- <script src="{{asset('porto-light/vendor/jquery-loading/dist/jquery.loading.js')}}"></script> --}}
 
     <!--<script src="assets/vendor/select2/js/select2.js"></script>-->
     {{--<script src="{{asset('porto-light/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>--}}

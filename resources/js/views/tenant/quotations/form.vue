@@ -1163,7 +1163,7 @@
                                                 enabled_discount_global
                                         "
                                     >
-                                        <td>
+                                        <div>
                                             <el-tooltip
                                                 class="item"
                                                 :content="
@@ -1190,8 +1190,8 @@
                                                 @change="changeTypeDiscount"
                                             ></el-checkbox>
                                             :
-                                        </td>
-                                        <td>
+                                        </div>
+                                        <div>
                                             <el-input-number
                                                 v-model="total_global_discount"
                                                 :min="0"
@@ -1201,7 +1201,7 @@
                                                     changeTotalGlobalDiscount
                                                 "
                                             ></el-input-number>
-                                        </td>
+                                        </div>
                                     </div>
                                 </span>
                                 <p
@@ -1395,7 +1395,6 @@
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </td>
-                                            <br />
                                         </tr>
                                     </tbody>
                                 </table>

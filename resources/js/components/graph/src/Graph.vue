@@ -1,256 +1,287 @@
 <template>
-    <div class="chart-container">
-        <canvas ref="canvas"></canvas>
-    </div>
+  <div class="chart-container">
+    <canvas ref="canvasRef"></canvas>
+  </div>
 </template>
 
-<style>
-    .chart-container {
-        position: relative;
-        margin: auto;
-        height: 220px;
-        width: 220px;
-    }
-    .chart-container .chartjs-render-monitor {
-        height: inherit!important;
-        width: inherit!important;
-    }
-</style>
+<script setup>
+import { ref, watch, onMounted, onBeforeUnmount, computed } from 'vue'
+import { Chart, registerables } from 'chart.js'
 
-<script>
-import Chart from 'chart.js';
+// Registrar componentes de Chart.js
+Chart.register(...registerables)
 
-export default {
-  props: ['type', 'allData'],
-  data() {
-    // defaults seguros para evitar undefined en data()
-    const defaultColors = {
-      primary: '#0d6efd',
-      danger: '#dc3545',
-      warning: '#ffc107',
-    };
-    return {
-      chart: null,
-      // colores disponibles inmediatamente
-      colors: { ...defaultColors },
-      observer: null,
-  _themeChangeHandler: null,
-      options: {
-        maintainAspectRatio: false,
-        cutoutPercentage: 75,
-        rotation: -0.5 * Math.PI,
-        circumference: 2 * Math.PI,
-        legend: { display: false },
-        plugins: {
-          doughnutlabel: {
-            labels: [
-              {
-                text: this.getTotal(),
-                font: { size: '20', family: "'Arial', sans-serif", weight: 'bold' },
-                color: this.getTextColor(),
-              },
-              {
-                text: 'Total',
-                font: { size: '16', family: "'Arial', sans-serif" },
-                color: '#9B9B9B',
-              },
-            ],
-          },
-        },
-        elements: {
-          arc: { borderWidth: 2, borderColor: '#FFFFFF', borderAlign: 'center', borderRadius: 15, spacing: 10 },
-        },
-      },
-      colorMap: []
-    }
+// Props
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'doughnut'
   },
-  created() {
-    this.title = 'Balance';
-  },
-  mounted() {
-    this.refreshColors();
-    this.registerDoughnutLabelPlugin();
-    this.setupThemeObserver();
+  allData: {
+    type: Object,
+    default: () => ({})
+  }
+})
 
-    // crear gráfico inicial si ya hay datos
-    if (this.allData && this.allData.datasets) this.createChart();
-  },
-  beforeDestroy() {
-    this.teardownThemeObserver();
+// Refs
+const canvasRef = ref(null)
+const chart = ref(null)
+const observer = ref(null)
+const themeChangeHandler = ref(null)
 
-    if (this.chart) {
-      this.chart.destroy();
-    }
-  },
-  watch: {
-    allData() {
-      this.createChart();
-    }
-  },
-  methods: {
-    registerDoughnutLabelPlugin() {
-      if (Chart._doughnutLabelRegistered) {
-        return;
-      }
+// Estado
+const colors = ref({
+  primary: '#0d6efd',
+  danger: '#dc3545',
+  warning: '#ffc107',
+})
 
-      Chart.pluginService.register({
-        beforeDraw: function(chart) {
-          if (chart.config.options.plugins.doughnutlabel) {
-            const width = chart.width,
-              height = chart.height,
-              ctx = chart.ctx;
+// Plugin personalizado para etiquetas en doughnut
+const doughnutLabelPlugin = {
+  id: 'doughnutLabel',
+  beforeDraw(chart) {
+    if (chart.config.options.plugins?.doughnutlabel) {
+      const width = chart.width
+      const height = chart.height
+      const ctx = chart.ctx
 
-            ctx.restore();
+      ctx.restore()
 
-            const mainFontSize = Math.min(height / 10, 16);
-            ctx.font = `bold ${mainFontSize}px Arial, sans-serif`;
-            ctx.textBaseline = "middle";
-            ctx.textAlign = "center";
+      const mainFontSize = Math.min(height / 10, 16)
+      ctx.font = `bold ${mainFontSize}px Arial, sans-serif`
+      ctx.textBaseline = 'middle'
+      ctx.textAlign = 'center'
 
-            const text = chart.config.options.plugins.doughnutlabel.labels[0].text;
-            ctx.fillStyle = chart.config.options.plugins.doughnutlabel.labels[0].color;
-            ctx.fillText(text, width / 2, height / 2 - 10);
+      const text = chart.config.options.plugins.doughnutlabel.labels[0].text
+      ctx.fillStyle = chart.config.options.plugins.doughnutlabel.labels[0].color
+      ctx.fillText(text, width / 2, height / 2 - 10)
 
-            const subFontSize = Math.min(height / 16, 12);
-            ctx.font = `${subFontSize}px Arial, sans-serif`;
-            ctx.fillStyle = chart.config.options.plugins.doughnutlabel.labels[1].color;
-            ctx.fillText('Total', width / 2, height / 2 + 15);
+      const subFontSize = Math.min(height / 16, 12)
+      ctx.font = `${subFontSize}px Arial, sans-serif`
+      ctx.fillStyle = chart.config.options.plugins.doughnutlabel.labels[1].color
+      ctx.fillText('Total', width / 2, height / 2 + 15)
 
-            ctx.save();
-          }
-        }
-      });
-
-      Chart._doughnutLabelRegistered = true;
-    },
-    refreshColors() {
-      const style = getComputedStyle(document.documentElement);
-      const fallback = {
-        primary: '#0d6efd',
-        danger: '#dc3545',
-        warning: '#ffc107',
-      };
-
-      this.colors = {
-        primary: style.getPropertyValue('--primary-color').trim() || this.colors.primary || fallback.primary,
-        danger: style.getPropertyValue('--danger').trim() || this.colors.danger || fallback.danger,
-        warning: style.getPropertyValue('--warning').trim() || this.colors.warning || fallback.warning,
-      };
-    },
-    setupThemeObserver() {
-      this.teardownThemeObserver();
-
-      const handler = () => {
-        this.handleThemeChange();
-      };
-
-      window.addEventListener('theme:change', handler);
-
-      this._themeChangeHandler = handler;
-      this.observer = new MutationObserver(() => {
-        this.handleThemeChange();
-      });
-
-      this.observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['class', 'style'],
-      });
-    },
-    teardownThemeObserver() {
-      if (this.observer) {
-        this.observer.disconnect();
-        this.observer = null;
-      }
-
-      if (this._themeChangeHandler) {
-        window.removeEventListener('theme:change', this._themeChangeHandler);
-        this._themeChangeHandler = null;
-      }
-    },
-    handleThemeChange() {
-      this.refreshColors();
-
-      if (this.allData && this.allData.datasets && this.allData.datasets.length) {
-        this.createChart();
-      }
-    },
-    getTotal() {
-      if (!this.allData || !this.allData.datasets || !this.allData.datasets[0]) return 'S/ 0.00';
-      const total = this.allData.datasets[0].data.reduce((a, b) => a + b, 0);
-      return (total < 0 ? 'S/ -' : 'S/ ') + Math.abs(total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-    },
-    getTextColor() {
-      const isDarkMode = document.documentElement.classList.contains('dark');
-      if (!this.allData || !this.allData.datasets || !this.allData.datasets[0]) {
-        return isDarkMode ? '#ffffff' : '#4A4A4A';
-      }
-      const total = this.allData.datasets[0].data.reduce((a, b) => a + b, 0);
-      if (isDarkMode) return '#ffffff';
-      const colors = this.colors || { primary: '#0d6efd', danger: '#dc3545' };
-      return total < 0 ? colors.danger : colors.primary;
-    },
-    hexToRgba(hex, alpha = 1) {
-      let r = 0, g = 0, b = 0;
-
-      if (hex.startsWith('#')) hex = hex.slice(1);
-
-      if (hex.length === 3) {
-        r = parseInt(hex[0] + hex[0], 16);
-        g = parseInt(hex[1] + hex[1], 16);
-        b = parseInt(hex[2] + hex[2], 16);
-      } else if (hex.length === 6) {
-        r = parseInt(hex.slice(0, 2), 16);
-        g = parseInt(hex.slice(2, 4), 16);
-        b = parseInt(hex.slice(4, 6), 16);
-      }
-
-      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    },
-    getSegmentColors(data) {
-      const baseColors = [this.colors.primary, this.colors.warning, this.colors.danger];
-      const customColors = ['#004387', '#16a34a'];
-      return data.map((value, index) => {
-        const color = customColors[index % customColors.length];
-        return {
-            backgroundColor: this.hexToRgba(color, 0.8),
-            borderColor: this.hexToRgba(color, 1),
-            hoverBackgroundColor: this.hexToRgba(color, 0.9),
-            hoverBorderColor: this.hexToRgba(color, 1)
-        };
-      });
-    },
-    createChart() {
-      if (!this.allData || !this.allData.datasets) {
-        return;
-      }
-
-      if (this.chart) {
-        this.chart.destroy();
-      }
-
-      this.options.plugins.doughnutlabel.labels[0].text = this.getTotal();
-      this.options.plugins.doughnutlabel.labels[0].color = this.getTextColor();
-
-      const datasets = this.allData.datasets.map(dataset => {
-        const segmentColors = this.getSegmentColors(dataset.data);
-
-        return {
-          ...dataset,
-          backgroundColor: segmentColors.map(c => c.backgroundColor),
-          borderColor: segmentColors.map(c => c.borderColor),
-          borderWidth: 2,
-        };
-      });
-
-      this.chart = new Chart(this.$refs.canvas.getContext('2d'), {
-        type: 'doughnut',
-        data: {
-          labels: this.allData.labels,
-          datasets: datasets
-        },
-        options: this.options,
-      });
+      ctx.save()
     }
   }
 }
+
+// Registrar el plugin solo una vez usando una variable global
+if (!window._doughnutLabelPluginRegistered) {
+  try {
+    Chart.register(doughnutLabelPlugin)
+    window._doughnutLabelPluginRegistered = true
+  } catch (error) {
+    // Si el plugin ya está registrado, Chart.js lanzará un error
+    // pero eso está bien, solo significa que ya está registrado
+    console.warn('Plugin doughnutLabel ya estaba registrado o hubo un error:', error)
+    window._doughnutLabelPluginRegistered = true
+  }
+}
+
+// Computed
+const getTotal = computed(() => {
+  if (!props.allData?.datasets?.[0]) return 'S/ 0.00'
+  const total = props.allData.datasets[0].data.reduce((a, b) => a + b, 0)
+  return (total < 0 ? 'S/ -' : 'S/ ') + Math.abs(total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+})
+
+const getTextColor = computed(() => {
+  const isDarkMode = document.documentElement.classList.contains('dark')
+  if (!props.allData?.datasets?.[0]) {
+    return isDarkMode ? '#ffffff' : '#4A4A4A'
+  }
+  const total = props.allData.datasets[0].data.reduce((a, b) => a + b, 0)
+  if (isDarkMode) return '#ffffff'
+  return total < 0 ? colors.value.danger : colors.value.primary
+})
+
+const chartOptions = computed(() => {
+  return {
+    maintainAspectRatio: false,
+    cutout: '75%',
+    rotation: -0.5 * Math.PI,
+    circumference: 2 * Math.PI,
+    plugins: {
+      legend: { display: false },
+      doughnutlabel: {
+        labels: [
+          {
+            text: getTotal.value,
+            font: { size: '20', family: "'Arial', sans-serif", weight: 'bold' },
+            color: getTextColor.value,
+          },
+          {
+            text: 'Total',
+            font: { size: '16', family: "'Arial', sans-serif" },
+            color: '#9B9B9B',
+          },
+        ],
+      },
+    },
+    elements: {
+      arc: { 
+        borderWidth: 2, 
+        borderColor: '#FFFFFF', 
+        borderAlign: 'center', 
+        borderRadius: 15, 
+        spacing: 10 
+      },
+    },
+  }
+})
+
+// Métodos
+const refreshColors = () => {
+  const style = getComputedStyle(document.documentElement)
+  const fallback = {
+    primary: '#0d6efd',
+    danger: '#dc3545',
+    warning: '#ffc107',
+  }
+
+  colors.value = {
+    primary: style.getPropertyValue('--primary-color').trim() || colors.value.primary || fallback.primary,
+    danger: style.getPropertyValue('--danger').trim() || colors.value.danger || fallback.danger,
+    warning: style.getPropertyValue('--warning').trim() || colors.value.warning || fallback.warning,
+  }
+}
+
+const hexToRgba = (hex, alpha = 1) => {
+  let r = 0, g = 0, b = 0
+
+  if (hex.startsWith('#')) hex = hex.slice(1)
+
+  if (hex.length === 3) {
+    r = parseInt(hex[0] + hex[0], 16)
+    g = parseInt(hex[1] + hex[1], 16)
+    b = parseInt(hex[2] + hex[2], 16)
+  } else if (hex.length === 6) {
+    r = parseInt(hex.slice(0, 2), 16)
+    g = parseInt(hex.slice(2, 4), 16)
+    b = parseInt(hex.slice(4, 6), 16)
+  }
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+const getSegmentColors = (data) => {
+  const customColors = ['#004387', '#16a34a']
+  return data.map((value, index) => {
+    const color = customColors[index % customColors.length]
+    return {
+      backgroundColor: hexToRgba(color, 0.8),
+      borderColor: hexToRgba(color, 1),
+      hoverBackgroundColor: hexToRgba(color, 0.9),
+      hoverBorderColor: hexToRgba(color, 1)
+    }
+  })
+}
+
+const createChart = () => {
+  if (!props.allData?.datasets || !canvasRef.value) {
+    return
+  }
+
+  if (chart.value) {
+    chart.value.destroy()
+  }
+
+  const datasets = props.allData.datasets.map(dataset => {
+    const segmentColors = getSegmentColors(dataset.data)
+
+    return {
+      ...dataset,
+      backgroundColor: segmentColors.map(c => c.backgroundColor),
+      borderColor: segmentColors.map(c => c.borderColor),
+      borderWidth: 2,
+    }
+  })
+
+  chart.value = new Chart(canvasRef.value.getContext('2d'), {
+    type: 'doughnut',
+    data: {
+      labels: props.allData.labels || [],
+      datasets: datasets
+    },
+    options: chartOptions.value,
+  })
+}
+
+const handleThemeChange = () => {
+  refreshColors()
+  if (props.allData?.datasets?.length) {
+    createChart()
+  }
+}
+
+const setupThemeObserver = () => {
+  teardownThemeObserver()
+
+  const handler = () => {
+    handleThemeChange()
+  }
+
+  window.addEventListener('theme:change', handler)
+  themeChangeHandler.value = handler
+
+  observer.value = new MutationObserver(() => {
+    handleThemeChange()
+  })
+
+  observer.value.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class', 'style'],
+  })
+}
+
+const teardownThemeObserver = () => {
+  if (observer.value) {
+    observer.value.disconnect()
+    observer.value = null
+  }
+
+  if (themeChangeHandler.value) {
+    window.removeEventListener('theme:change', themeChangeHandler.value)
+    themeChangeHandler.value = null
+  }
+}
+
+// Watch
+watch(() => props.allData, () => {
+  createChart()
+}, { deep: true })
+
+// Lifecycle
+onMounted(() => {
+  refreshColors()
+  setupThemeObserver()
+
+  // Crear gráfico inicial si ya hay datos
+  if (props.allData?.datasets) {
+    createChart()
+  }
+})
+
+onBeforeUnmount(() => {
+  teardownThemeObserver()
+
+  if (chart.value) {
+    chart.value.destroy()
+  }
+})
 </script>
+
+<style scoped>
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 220px;
+  width: 220px;
+}
+
+.chart-container .chartjs-render-monitor {
+  height: inherit !important;
+  width: inherit !important;
+}
+</style>

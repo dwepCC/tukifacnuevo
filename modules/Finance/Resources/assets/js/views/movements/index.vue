@@ -90,11 +90,11 @@
                                 <small v-text="row.document_type_description"></small>
                             </td>
                             <!-- Detalle -->
-                            <td>
-                                <template v-for="(item, index) in row.items">
-                                    <label :key="index">- {{ item.description }}<br/></label>
-                                </template>
-                            </td>
+                              <td>
+                                  <template v-for="(item, index) in row.items" :key="index">
+                                      <label>- {{ item.description }}<br/></label>
+                                  </template>
+                              </td>
                             <!-- Moneda -->
                             <td>{{ row.currency_type_id }}</td>
                             <!-- Destino -->

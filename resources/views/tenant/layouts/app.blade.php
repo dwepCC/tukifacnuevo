@@ -29,7 +29,8 @@
 
     @stack('styles')
 
-    <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script>
+    {{-- Modernizr eliminado - no necesario en navegadores modernos --}}
+    {{-- <script src="{{ asset('porto-light/vendor/modernizr/modernizr.js') }}"></script> --}}
 
     <style>
         @media (min-width: 768px) {

@@ -160,6 +160,7 @@
                                         <th>{{ item.month }}</th>
                                     </tr>
                                     </thead>
+                                    <tbody>
                                     <tr>
 
                                         <td>Total: {{ item.total }}</td>
@@ -177,6 +178,7 @@
                                             }}
                                         </td>
                                     </tr>
+                                    </tbody>
                                 </table>
                             </td>
                         </tr>

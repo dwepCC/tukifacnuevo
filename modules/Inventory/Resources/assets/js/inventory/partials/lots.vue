@@ -35,7 +35,6 @@
                                 <td>
                                     {{row.date}}
                                 </td>
-                                <br>
                             </tr>
                         </tbody>
                     </table>

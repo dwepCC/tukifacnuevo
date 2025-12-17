@@ -22,10 +22,12 @@
           <el-tooltip
             class="item"
             effect="dark"
-            :content="String(total_cpe)"
+            :content="String(total_cpe || 0)"
             placement="top-start"
           >
-            <h3 class="font-weight-bold m-0 mb-2">{{ total_cpe | formatNumber(0, 0) }}</h3>
+            <template #default>
+              <h3 class="font-weight-bold m-0 mb-2">{{ formatNumber(total_cpe, 0, 0) }}</h3>
+            </template>
           </el-tooltip>
           <small>CPE Emitidos</small>
         </div>
@@ -38,10 +40,12 @@
           <el-tooltip
             class="item"
             effect="dark"
-            :content="String(document_total_global)"
+            :content="String(document_total_global || 0)"
             placement="top-start"
           >
-            <h3 class="font-weight-bold m-0 mb-2">{{ document_total_global | formatNumber }}</h3>
+            <template #default>
+              <h3 class="font-weight-bold m-0 mb-2">{{ formatNumber(document_total_global) }}</h3>
+            </template>
           </el-tooltip>
           <small>Total comprobantes</small>
         </div>
@@ -54,10 +58,12 @@
           <el-tooltip
             class="item"
             effect="dark"
-            :content="String(sale_note_total_global)"
+            :content="String(sale_note_total_global || 0)"
             placement="top-start"
           >
-            <h3 class="font-weight-bold m-0 mb-2">{{ sale_note_total_global | formatNumber }}</h3>
+            <template #default>
+              <h3 class="font-weight-bold m-0 mb-2">{{ formatNumber(sale_note_total_global) }}</h3>
+            </template>
           </el-tooltip>
           <small>Total notas de ventas</small>
         </div>
@@ -70,10 +76,12 @@
           <el-tooltip
             class="item"
             effect="dark"
-            :content="String(total)"
+            :content="String(total || 0)"
             placement="top-start"
           >
-            <h3 class="font-weight-bold m-0 mb-2">{{ total | formatNumber }}</h3>
+            <template #default>
+              <h3 class="font-weight-bold m-0 mb-2">{{ formatNumber(total) }}</h3>
+            </template>
           </el-tooltip>
           <small>Ventas totales</small>
         </div>
@@ -86,10 +94,12 @@
           <el-tooltip
             class="item"
             effect="dark"
-            :content="String(utilities.totals.utility)"
+            :content="String(utilities?.totals?.utility || 0)"
             placement="top-start"
           >
-            <h3 class="font-weight-bold m-0 mb-2">{{ utilities.totals.utility | formatNumber }}</h3>
+            <template #default>
+              <h3 class="font-weight-bold m-0 mb-2">{{ formatNumber(utilities?.totals?.utility) }}</h3>
+            </template>
           </el-tooltip>
           <small>Utilidad neta</small>
         </div>
@@ -136,8 +146,6 @@ export default {
         this.total = this.document_total_global + this.sale_note_total_global;
       });
     },
-  },
-  filters: {
     formatNumber(value, baseDecimals = 2, suffixDecimals = 1) {
       const numericValue = Number(value);
       const defaultString = (0).toLocaleString("en-US", {

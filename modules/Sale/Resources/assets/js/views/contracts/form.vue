@@ -727,7 +727,6 @@
                                                         ></i>
                                                     </button>
                                                 </td>
-                                                <br />
                                             </tr>
                                         </tbody>
                                     </table>

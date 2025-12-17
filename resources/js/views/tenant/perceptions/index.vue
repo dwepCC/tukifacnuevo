@@ -23,7 +23,7 @@
                         <th class="text-start">Régimen de percepción</th>
                         <th class="text-end">Total</th>
                         <th class="text-end">Descargas</th>
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }" :class="{'text-danger': (row.state_type_id === '11')}">
                         <!-- <td>{{ index }}</td> -->
                         <td class="text-start">{{ row.date_of_issue }}</td>

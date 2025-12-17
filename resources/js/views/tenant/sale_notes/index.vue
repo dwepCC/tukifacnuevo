@@ -289,9 +289,8 @@
                             {{ row.total_pending_paid }}
                         </td>
                         <td>
-                            <template v-for="(document, i) in row.documents">
+                            <template v-for="(document, i) in row.documents" :key="i">
                                 <label
-                                    :key="i"
                                     v-text="document.number_full"
                                     class="d-block"
                                 ></label>
@@ -455,8 +454,8 @@
                                         Generar comprobante
                                     </el-dropdown-item>
 
-                                    <template v-for="(document, i) in row.documents" v-if="row.changed">
-                                        <el-dropdown-item :key="i">
+                                    <template v-for="(document, i) in row.documents" :key="i" v-if="row.changed">
+                                        <el-dropdown-item>
                                             <a :href="`/dispatches/create/${document.id}`" style="text-decoration: none; color: inherit;">
                                                 Generar guía desde CPE
                                             </a>

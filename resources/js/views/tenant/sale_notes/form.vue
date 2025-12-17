@@ -1311,33 +1311,35 @@
                                     <div class="col-lg-2 float-end">
                                         <div class="form-group">
                                             <table>
-                                                <tr>
-                                                    <td>
-                                                        {{
-                                                            currency_type.symbol
-                                                        }}
-                                                    </td>
-                                                    <td>
-                                                        <el-input-number
-                                                            v-model="
-                                                                total_global_charge
-                                                            "
-                                                            :disabled="
-                                                                config.active_allowance_charge ==
-                                                                true
-                                                                    ? true
-                                                                    : false
-                                                            "
-                                                            :min="0"
-                                                            class="input-custom ml-2"
-                                                            controls-position="right"
-                                                            @change="
-                                                                calculateTotal
-                                                            "
-                                                        >
-                                                        </el-input-number>
-                                                    </td>
-                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            {{
+                                                                currency_type.symbol
+                                                            }}
+                                                        </td>
+                                                        <td>
+                                                            <el-input-number
+                                                                v-model="
+                                                                    total_global_charge
+                                                                "
+                                                                :disabled="
+                                                                    config.active_allowance_charge ==
+                                                                    true
+                                                                        ? true
+                                                                        : false
+                                                                "
+                                                                :min="0"
+                                                                class="input-custom ml-2"
+                                                                controls-position="right"
+                                                                @change="
+                                                                    calculateTotal
+                                                                "
+                                                            >
+                                                            </el-input-number>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
                                             </table>
                                         </div>
                                     </div>

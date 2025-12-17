@@ -125,9 +125,11 @@
                                         class="el-table--small el-table--fit el-table"
                                     >
                                         <thead class="has-gutter">
-                                            <th colspan="2" class="text-center">
-                                                Contacto
-                                            </th>
+                                            <tr>
+                                                <th colspan="2" class="text-center">
+                                                    Contacto
+                                                </th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="el-table tr">

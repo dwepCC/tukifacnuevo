@@ -951,6 +951,7 @@
                                                         Guías
                                                     </label>
                                                     <table style="width: 100%">
+                                                        <tbody>
                                                         <tr
                                                             v-for="(guide,
                                                             index) in form.guides"
@@ -1020,6 +1021,7 @@
                                                                 </label>
                                                             </td>
                                                         </tr>
+                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </template>
@@ -1033,6 +1035,7 @@
                                                         Guías
                                                     </label>
                                                     <table style="width: 100%">
+                                                        <tbody>
                                                         <tr
                                                             v-for="(guide,
                                                             index) in form.guides"
@@ -1103,6 +1106,7 @@
                                                                 </label>
                                                             </td>
                                                         </tr>
+                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </template>

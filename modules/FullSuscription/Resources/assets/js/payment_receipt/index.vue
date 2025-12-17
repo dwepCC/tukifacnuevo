@@ -225,9 +225,8 @@
                         </td>
                         <!--Comprobantes -->
                         <td>
-                            <template v-for="(document, i) in row.documents">
+                            <template v-for="(document, i) in row.documents" :key="i">
                                 <label
-                                    :key="i"
                                     class="d-block"
                                     v-text="document.number_full"
                                 >

@@ -11,7 +11,7 @@
                             <th class="text-center">Documento</th>
                             <th class="text-center">Fecha</th>
                             <th class="text-center">Precio</th>  
-                        <tr>
+                        </tr>
                         <tr slot-scope="{ index, row }">
                             <td>{{ index }}</td>
                             <td  class="">{{ row.supplier_name }}<br/><small v-text="row.supplier_number"></small></td>

@@ -98,8 +98,8 @@
                         </td>
 
                         <td class="text-center">
-                            <template v-for="(row, index) in row.documents">
-                                <label class="d-block" :key="index">{{
+                            <template v-for="(row, index) in row.documents" :key="index">
+                                <label class="d-block">{{
                                     row.description
                                 }}</label>
                             </template>

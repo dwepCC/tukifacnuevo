@@ -165,9 +165,9 @@
                 </div>
                 <br/>
 
-                <div v-if="place == 'cat'" class="row no-gutters">
-                    <template v-for="(item, index) in categories">
-                        <div class="col" :key="index">
+                  <div v-if="place == 'cat'" class="row no-gutters">
+                      <template v-for="(item, index) in categories" :key="index">
+                          <div class="col">
                             <div @click="filterCategorie(item.id)" class="card p-0 m-0 mb-1 mr-1 text-center">
                                 <div
                                     :style="{ backgroundColor: item.color }"
@@ -182,8 +182,8 @@
                 </div>
 
                 <div v-if="place == 'prod' || place == 'cat2'" class="row">
-                    <template v-for="(item, index) in items">
-                        <div v-bind:style="classObjectCol" :key="index">
+                    <template v-for="(item, index) in items" :key="index">
+                        <div v-bind:style="classObjectCol">
                             <section class="card ">
                                 <div
                                     class="card-body pointer px-2 pt-2"
@@ -578,8 +578,8 @@
                     <div class="row py-1 border-bottom m-0 p-0">
                         <div class="col-12">
                             <table class="table table-sm table-borderless mb-0 pos-list-items">
-                                <template v-for="(item, index) in form.items">
-                                    <tr :key="index">
+                                <template v-for="(item, index) in form.items" :key="index">
+                                    <tr>
                                         <td style="width: 10px; text-align: center; vertical-align: top" class="pos-list-label">
                                             {{ item.unit_type_id }}
                                         </td>

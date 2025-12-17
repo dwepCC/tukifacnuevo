@@ -666,7 +666,7 @@
                                                     </td>
                                                 </template>
                                                 <template v-else>
-                                                    <td class="text-center">  <el-input v-model="row.barcode"></el-input>
+                                                    <td class="text-center"><el-input v-model="row.barcode"></el-input></td>
                                                     <td>
                                                         <div class="form-group">
                                                             <el-select v-model="row.unit_type_id"

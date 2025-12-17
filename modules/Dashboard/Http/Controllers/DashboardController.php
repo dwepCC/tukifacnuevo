@@ -19,6 +19,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use Illuminate\Support\Arr;
 use Modules\Dashboard\Helpers\DashboardInventory;
 use App\Models\Tenant\Configuration;
+use Inertia\Inertia;
 
 /**
  * Class DashboardController
@@ -41,10 +42,14 @@ class DashboardController extends Controller
         $soap_company  = $company->soap_type_id;
         $configuration = Configuration::first();
 
-        return view('dashboard::index', compact('soap_company','configuration'));
+        return Inertia::render('Tenant/Dashboard/Index', [
+            'soap_company' => $soap_company,
+            'configuration' => $configuration,
+            'type_user' => auth()->user()->type,
+        ]);
     }
 
-        public function inicio()
+    public function inicio()
     {
         if(auth()->user()->type != 'admin' && !auth()->user()->searchModule('dashboard')){
             return redirect()->route('tenant.documents.index');
@@ -56,10 +61,14 @@ class DashboardController extends Controller
         $soap_company  = $company->soap_type_id;
         $configuration = Configuration::first();
 
-        return view('dashboard::inicio', compact('soap_company','configuration'));
+        return Inertia::render('Tenant/Dashboard/Inicio', [
+            'soap_company' => $soap_company,
+            'configuration' => $configuration,
+            'type_user' => auth()->user()->type,
+        ]);
     }
 
-        public function soporte()
+    public function soporte()
     {
         if(auth()->user()->type != 'admin' && !auth()->user()->searchModule('dashboard')){
             return redirect()->route('tenant.documents.index');
@@ -71,7 +80,11 @@ class DashboardController extends Controller
         $soap_company  = $company->soap_type_id;
         $configuration = Configuration::first();
 
-        return view('dashboard::soporte', compact('soap_company','configuration'));
+        return Inertia::render('Tenant/Dashboard/Soporte', [
+            'soap_company' => $soap_company,
+            'configuration' => $configuration,
+            'type_user' => auth()->user()->type,
+        ]);
     }
     
     public function filter()

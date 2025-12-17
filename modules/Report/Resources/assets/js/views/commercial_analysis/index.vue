@@ -37,7 +37,7 @@
                                 <th class="">Accesorios</th> -->
     
                                 <th class="">Contactar el</th> 
-                            <tr>
+                            </tr>
                             <tr slot-scope="{ index, row }">
                                 <td>{{ index }}</td> 
                                 <td>{{row.customer_name}}</td>

@@ -47,9 +47,7 @@
                         <div class="col-12">
                             <div class="form-group" :class="{'has-danger': errors.introduction}">
                                 <label class="control-label d-block">Mensaje de introducción</label>
-                                <ckeditor
-                                    :editors="editors"
-                                    type="classic"
+                                <CKEditor
                                     v-model="form.introduction"
                                     :config="editorConfig"
                                 />
@@ -67,90 +65,82 @@
     </div>
 </template>
 
-<script>
-import CKEditor from 'vue-ckeditor5'
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+<script setup>
+import { ref, onMounted } from 'vue'
+import CKEditor from '@/components/CKEditor.vue'
+import axios from 'axios'
+import { useMessage } from '@/helpers/compat'
 
-export default {
-    components: {
-        // registra el componente como <ckeditor />
-        ckeditor: CKEditor.component
-    },
-    data() {
-        return {
-            loading_submit: false,
-            resource: 'users',
-            errors: {},
-            editors: {
-                classic: ClassicEditor
-            },
-            editorConfig: {
-                toolbar: [
-                    'heading',
-                    '|',
-                    'bold', 'italic', 'link',
-                    'bulletedList', 'numberedList',
-                    '|',
-                    'blockQuote',
-                    'undo', 'redo'
-                ]
-            },
-            form: {
-                phone: null,
-                whatsapp_number: null,
-                address_contact: null,
-                enable_whatsapp: true,
-                introduction: ''
-            }
-        }
-    },
-    created() {
-        this.initForm();
-        this.$http.get(`/${this.resource}/record`)
-            .then(response => {
-                if (response.data !== '') {
-                    this.form = Object.assign({
-                        phone: null,
-                        whatsapp_number: null,
-                        address_contact: null,
-                        enable_whatsapp: true,
-                        introduction: ''
-                    }, response.data.data || {})
-                }
-            });
-    },
-    methods: {
-        initForm() {
-            this.errors = {};
-            this.form = {
-                phone: null,
-                whatsapp_number: null,
-                address_contact: null,
-                enable_whatsapp: true,
-                introduction: ''
-            };
-        },
-        submit() {
-            this.loading_submit = true;
-            this.$http.post(`/${this.resource}`, this.form)
-                .then(response => {
-                    if (response.data.success) {
-                        this.$message.success(response.data.message);
-                    } else {
-                        this.$message.error(response.data.message);
-                    }
-                })
-                .catch(error => {
-                    if (error.response.status === 422) {
-                        this.errors = error.response.data;
-                    } else {
-                        console.log(error);
-                    }
-                })
-                .finally(() => {
-                    this.loading_submit = false;
-                });
-        }
+const $message = useMessage()
+
+const loading_submit = ref(false)
+const resource = 'users'
+const errors = ref({})
+const editorConfig = {
+    toolbar: [
+        'heading',
+        '|',
+        'bold', 'italic', 'link',
+        'bulletedList', 'numberedList',
+        '|',
+        'blockQuote',
+        'undo', 'redo'
+    ]
+}
+const form = ref({
+    phone: null,
+    whatsapp_number: null,
+    address_contact: null,
+    enable_whatsapp: true,
+    introduction: ''
+})
+
+const initForm = () => {
+    errors.value = {}
+    form.value = {
+        phone: null,
+        whatsapp_number: null,
+        address_contact: null,
+        enable_whatsapp: true,
+        introduction: ''
     }
 }
+
+const submit = () => {
+    loading_submit.value = true
+    axios.post(`/${resource}`, form.value)
+        .then(response => {
+            if (response.data.success) {
+                $message.success(response.data.message)
+            } else {
+                $message.error(response.data.message)
+            }
+        })
+        .catch(error => {
+            if (error.response?.status === 422) {
+                errors.value = error.response.data
+            } else {
+                console.log(error)
+            }
+        })
+        .finally(() => {
+            loading_submit.value = false
+        })
+}
+
+onMounted(() => {
+    initForm()
+    axios.get(`/${resource}/record`)
+        .then(response => {
+            if (response.data !== '') {
+                form.value = Object.assign({
+                    phone: null,
+                    whatsapp_number: null,
+                    address_contact: null,
+                    enable_whatsapp: true,
+                    introduction: ''
+                }, response.data.data || {})
+            }
+        })
+})
 </script>

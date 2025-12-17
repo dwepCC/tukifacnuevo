@@ -19,7 +19,7 @@
                             
                             <th class="">Total IGV</th>
                             <th class="">Total</th>
-                        <tr>
+                        </tr>
                         <tr slot-scope="{ index, row }">
                             <td>{{ index }}</td> 
                             <td>{{row.document_type_description}}</td>

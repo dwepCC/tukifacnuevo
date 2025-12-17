@@ -288,9 +288,11 @@
                                                             effect="dark"
                                                             content="Ventas - Compras - Gastos"
                                                             placement="top-start"
-                                                            >
+                                                        >
+                                                            <template #default>
                                                                 <i class="fa fa-info-circle"></i>
-                                                            </el-tooltip>
+                                                            </template>
+                                                        </el-tooltip>
                                                         </label>
                                                 </div>
                                             </div>
@@ -308,12 +310,16 @@
                                             <tr class="text-info text-bold">
                                                 <td class="d-flex align-items-center">
                                                     <el-popover placement="right" width="100%" trigger="hover">
+                                                        <template #reference>
+                                                            <el-button class="me-1" type="primary" size="small" circle>
+                                                                <i class="fas fa-eye"></i>
+                                                            </el-button>
+                                                        </template>
                                                         <p><span class="custom-badge">T. Ventas - T. Compras/Gastos</span></p>
                                                         <p>Total comprobantes:<span class="custom-badge pull-right">S/ {{ balance.totals.total_document }}</span></p>
                                                         <p>Total notas de venta:<span class="custom-badge pull-right">S/ {{ balance.totals.total_sale_note }}</span></p>
                                                         <p>Total compras:<span class="custom-badge pull-right">- S/ {{ balance.totals.total_purchase }}</span></p>
                                                         <p>Total gastos:<span class="custom-badge pull-right">- S/ {{ balance.totals.total_expense }}</span></p>
-                                                        <el-button class="me-1" icon="el-icon-view" type="primary" size="mini" slot="reference" circle></el-button>
                                                     </el-popover>
                                                     Totales
                                                 </td>
@@ -322,12 +328,16 @@
                                             <tr class="text-danger text-bold td-total">
                                                 <td class="d-flex align-items-center">
                                                     <el-popover placement="right" width="100%" trigger="hover">
-                                                    <p><span class="custom-badge">T. Pagos Ventas - T. Pagos Compras/Gastos</span></p>
-                                                    <p>Total pagos comprobantes:<span class="custom-badge pull-right">S/ {{ balance.totals.total_payment_document }}</span></p>
-                                                    <p>Total pagos notas de venta:<span class="custom-badge pull-right">S/ {{ balance.totals.total_payment_sale_note }}</span></p>
-                                                    <p>Total pagos compras:<span class="custom-badge pull-right">- S/ {{ balance.totals.total_payment_purchase }}</span></p>
-                                                    <p>Total pagos gastos:<span class="custom-badge pull-right">- S/ {{ balance.totals.total_payment_expense }}</span></p>
-                                                    <el-button class="me-1" icon="el-icon-view" type="danger" size="mini" slot="reference" circle></el-button>
+                                                        <template #reference>
+                                                            <el-button class="me-1" type="danger" size="small" circle>
+                                                                <i class="fas fa-eye"></i>
+                                                            </el-button>
+                                                        </template>
+                                                        <p><span class="custom-badge">T. Pagos Ventas - T. Pagos Compras/Gastos</span></p>
+                                                        <p>Total pagos comprobantes:<span class="custom-badge pull-right">S/ {{ balance.totals.total_payment_document }}</span></p>
+                                                        <p>Total pagos notas de venta:<span class="custom-badge pull-right">S/ {{ balance.totals.total_payment_sale_note }}</span></p>
+                                                        <p>Total pagos compras:<span class="custom-badge pull-right">- S/ {{ balance.totals.total_payment_purchase }}</span></p>
+                                                        <p>Total pagos gastos:<span class="custom-badge pull-right">- S/ {{ balance.totals.total_payment_expense }}</span></p>
                                                     </el-popover>
                                                     Total pagos
                                                 </td>
@@ -417,12 +427,14 @@
                                                     <div class="col-md-12 m-b-10">
                                                         <label>Compras
                                                             <el-tooltip
-                                                            class="item"
-                                                            effect="dark"
-                                                            content="Aplica filtro por sucursal"
-                                                            placement="top-start"
+                                                                class="item"
+                                                                effect="dark"
+                                                                content="Aplica filtro por sucursal"
+                                                                placement="top-start"
                                                             >
-                                                                <i class="fa fa-info-circle"></i>
+                                                                <template #default>
+                                                                    <i class="fa fa-info-circle"></i>
+                                                                </template>
                                                             </el-tooltip>
                                                         </label>
                                                     </div>
@@ -481,14 +493,18 @@
                                                     <th>Nombre</th>
                                                     <th class="text-end">
                                                         Mov.
-                                                        <el-tooltip class="item" effect="dark" content="Movimientos (Cantidad de veces vendido)" placement="top-start"><i class="fa fa-info-circle"></i></el-tooltip>
+                                                        <el-tooltip class="item" effect="dark" content="Movimientos (Cantidad de veces vendido)" placement="top-start">
+                                                            <template #default>
+                                                                <i class="fa fa-info-circle"></i>
+                                                            </template>
+                                                        </el-tooltip>
                                                     </th>
                                                     <th class="text-end">Total</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <template v-for="(row, index) in items_by_sales">
-                                                    <tr :key="index">
+                                                <template v-for="(row, index) in items_by_sales" :key="index">
+                                                    <tr>
                                                         <td>{{ index + 1 }}</td>
                                                         <td>{{ row.internal_id }}</td>
                                                         <td>{{ row.description }}</td>
@@ -535,15 +551,17 @@
                                                             content="Transacciones (Cantidad de ventas realizadas)"
                                                             placement="top-start"
                                                         >
-                                                            <i class="fa fa-info-circle"></i>
+                                                            <template #default>
+                                                                <i class="fa fa-info-circle"></i>
+                                                            </template>
                                                         </el-tooltip>
                                                     </th>
                                                     <th class="text-end">Total</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="tbody-default">
-                                                <template v-for="(row, index) in top_customers" class="template-default">
-                                                    <tr :key="index" class="tr-default">
+                                                <template v-for="(row, index) in top_customers" :key="index">
+                                                    <tr class="tr-default">
                                                         <!-- <td>{{ index + 1 }}</td> -->
                                                         <td>{{ row.name }}<br /><small v-text="row.number"></small></td>
                                                         <td class="text-end">{{ row.transaction_quantity }}</td>
@@ -593,7 +611,7 @@ import queryString from "query-string";
 import LoaderGraph from "../components/loaders/l-graph.vue";
 import RowTop from "./RowTop.vue";
 import DashboardInventory from "./partials/dashboard_inventory.vue";
-import {mapActions, mapState} from "vuex/dist/vuex.mjs";
+import {mapActions, mapState} from "@/stores/vuex-adapter";
 
 export default {
   props: ["typeUser", "soapCompany",'configuration'],

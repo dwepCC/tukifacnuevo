@@ -19,7 +19,7 @@
                             <th class="text-center">Fecha</th>
                             <th class="text-center">Precio</th>
                             <th class="text-center">Cliente</th> 
-                        <tr>
+                        </tr>
                         <tr slot-scope="{ index, row }">
                             <td>{{ index }}</td>
                             <td  class="text-center">{{ row.number_full }}</td>

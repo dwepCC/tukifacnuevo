@@ -35,7 +35,7 @@
                         <th>Comprobante</th>
                         <th>Productos</th>
 
-                    <tr>
+                    </tr>
                     <tr slot-scope="{ index, row }">
                         <td>{{ index }}</td>
                         <td>{{ row.name }}</td>

@@ -60,9 +60,8 @@
             <div class="row mt-2">  
 
             </div>
-                <div class="row mt-1 mb-4">
+            <div class="row mt-1 mb-4">
                     
-                </div> 
             </div>
 
             <div class="col-md-12">

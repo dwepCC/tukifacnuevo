@@ -72,6 +72,7 @@ use Modules\Inventory\Models\{
     InventoryConfiguration
 };
 use App\Models\Tenant\Cash;
+use Inertia\Inertia;
 
 class DocumentController extends Controller
 {
@@ -93,20 +94,25 @@ class DocumentController extends Controller
         $import_documents = config('tenant.import_documents');
         $import_documents_second = config('tenant.import_documents_second_format');
         $document_import_excel = config('tenant.document_import_excel');
-        $configuration = Configuration::getPublicConfig();
+        
+        // getPublicConfig retorna JSON string, necesitamos decodificarlo para Inertia
+        $configurationJson = Configuration::getPublicConfig();
+        $configuration = json_decode($configurationJson, true);
 
         // apiperu
         // se valida cual api usar para validacion desde el listado de comprobantes
         $view_apiperudev_validator_cpe = config('tenant.apiperudev_validator_cpe');
         $view_validator_cpe = config('tenant.validator_cpe');
 
-        return view('tenant.documents.index',
-            compact('is_client', 'import_documents',
-                'import_documents_second',
-                'document_import_excel',
-                'configuration',
-                'view_apiperudev_validator_cpe',
-                'view_validator_cpe'));
+        return Inertia::render('Tenant/Documents/Index', [
+            'is_client' => $is_client,
+            'import_documents' => $import_documents,
+            'import_documents_second' => $import_documents_second,
+            'document_import_excel' => $document_import_excel,
+            'configuration' => $configuration,
+            'view_apiperudev_validator_cpe' => $view_apiperudev_validator_cpe,
+            'view_validator_cpe' => $view_validator_cpe,
+        ]);
     }
 
     public function columns()
@@ -120,8 +126,12 @@ class DocumentController extends Controller
     public function records(Request $request)
     {
         $records = $this->getRecords($request);
+        
+        // Obtener parámetros de paginación de la request
+        $perPage = $request->get('per_page', config('tenant.items_per_page'));
+        $page = $request->get('page', 1);
 
-        return new DocumentCollection($records->paginate(config('tenant.items_per_page')));
+        return new DocumentCollection($records->paginate($perPage, ['*'], 'page', $page));
     }
 
     /**
@@ -211,7 +221,13 @@ class DocumentController extends Controller
 
         $configuration = Configuration::first();
         $is_contingency = 0;
-        return view('tenant.documents.form', compact('is_contingency', 'configuration'));
+        
+        return Inertia::render('Tenant/Documents/Form', [
+            'is_contingency' => $is_contingency,
+            'configuration' => $configuration,
+            'is_update' => false,
+            'document_id' => null,
+        ]);
     }
 
     public function create_tensu()
@@ -226,7 +242,10 @@ class DocumentController extends Controller
         }
 
         $is_contingency = 0;
-        return view('tenant.documents.form_tensu', compact('is_contingency'));
+        
+        return Inertia::render('Tenant/Documents/FormTensu', [
+            'is_contingency' => $is_contingency,
+        ]);
     }
 
 
@@ -848,7 +867,13 @@ class DocumentController extends Controller
         $configuration = Configuration::first();
         $is_contingency = 0;
         $isUpdate = true;
-        return view('tenant.documents.form', compact('is_contingency', 'configuration', 'documentId', 'isUpdate'));
+        
+        return Inertia::render('Tenant/Documents/Form', [
+            'is_contingency' => $is_contingency,
+            'configuration' => $configuration,
+            'document_id' => $documentId,
+            'is_update' => $isUpdate,
+        ]);
     }
 
     /**
